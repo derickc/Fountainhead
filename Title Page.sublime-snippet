@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+Format: Screenplay
+Title: _**${1:Script Title}**_
+Credit: ${2:Written By}
+Author: ${3:Full Name}
+Source: ${4:Story By ?}
+Draft date: ${5:Date}
+Contact:
+	${6:Address
+	Phone}
+]]></content>
+	<tabTrigger>title</tabTrigger>
+	<scope>text.fountain</scope>
+</snippet>

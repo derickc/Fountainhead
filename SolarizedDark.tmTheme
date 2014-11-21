@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>author</key>
+    <string>Derick</string>
+    <!-- Based on Ethan Schoonover's Solarized theme http://ethanschoonover.com/solarized -->
+    <key>name</key>
+    <string>Fountainhead</string>
+    <key>scope</key>
+    <string>text.html.markdown.fountain</string>
+    <key>settings</key>
+    <array>
+        <dict>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <!-- Base03 -->
+                <string>#002b36</string>
+                <key>caret</key>
+                <!-- Base3 -->
+                <string>#fdf6e3</string>
+                <!-- Action, Centered Text, Title Page -->
+                <key>foreground</key>
+                <!-- Base1 -->
+                <string>#93a1a1</string>
+                <key>invisibles</key>
+                <!-- Base1 -->
+                <string>#93a1a1</string>
+                <key>lineHighlight</key>
+                <!-- Base02 -->
+                <string>#073642</string>
+                <key>selection</key>
+                <!-- Base02 -->
+                <string>#073642</string>
+                <key>bracketsForeground</key>
+                <string>#F8F8F2A5</string>
+                <key>bracketsOptions</key>
+                <string>underline</string>
+                <key>bracketContentsForeground</key>
+                <string>#F8F8F2A5</string>
+                <key>bracketContentsOptions</key>
+                <string>underline</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Synopses</string>
+            <key>scope</key>
+            <string>meta.diff</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Green -->
+                <string>#859900</string>
+                <key>fontStyle</key>
+                <string>italic</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Scene Headings</string>
+            <key>scope</key>
+            <string>entity.name.function</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Blue -->
+                <string>#268bd2</string>
+                <key>fontStyle</key>
+                <string>bold</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Sections</string>
+            <key>scope</key>
+            <string>entity.name.filename</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Violet -->
+                <string>#6c71c4</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Dialogue and Lyrics</key>
+            <key>scope</key>
+            <string>string</string>
+            <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <!-- Base00 -->
+                    <string>#657b83</string>
+                </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Character</string>
+            <key>scope</key>
+            <string>entity.name.class</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Cyan -->
+                <string>#2aa198</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Parenthetical</string>
+            <key>scope</key>
+            <string>entity.other.inherited-class</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Magenta -->
+                <string>#d33682</string>
+                <key>fontStyle</key>
+                <string>italic</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Transitions</string>
+            <key>scope</key>
+            <string>entity.name.tag</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Orange -->
+                <string>#cb4b16</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Notes</string>
+            <key>scope</key>
+            <string>variable.parameter</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Yellow -->
+                <string>#b58900</string>
+                <key>fontStyle</key>
+                <string>italic</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Boneyard</string>
+            <key>scope</key>
+            <string>comment</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Lighter Base02 -->
+                <string>#0c5c70</string>
+                <key>fontStyle</key>
+                <string>italic</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Bold Text</string>
+            <key>scope</key>
+            <string>markup.changed</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <!-- Red -->
+                <string>#dc322f</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Italic Text</string>
+            <key>scope</key>
+            <string>message.error</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>italic</string>
+                <key>foreground</key>
+                <!-- Red -->
+                <string>#dc322f</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Bold Italic Text</string>
+            <key>scope</key>
+            <string>markup.inserted</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold italic</string>
+                <key>foreground</key>
+                <!-- Red -->
+                <string>#dc322f</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Underline Text</string>
+            <key>scope</key>
+            <string>markup.deleted</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>underline</string>
+                <key>foreground</key>
+                <!-- Red -->
+                <string>#dc322f</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Page Breaks</string>
+            <key>scope</key>
+            <string>support.function</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Orange -->
+                <string>#cb4b16</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Characters and Scenes</string>
+            <key>scope</key>
+            <string>constant.character</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- Orange -->
+                <string>#cb4b16</string>
+            </dict>
+        </dict>
+    </array>
+    <key>uuid</key>
+    <string>710463bf-546b-4c42-9932-a35bff89a4fa</string>
+</dict>
+</plist>

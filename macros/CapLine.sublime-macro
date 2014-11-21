@@ -1,0 +1,29 @@
+[
+	{
+		"args":
+		{
+			"extend": true,
+			"to": "bol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args": null,
+		"command": "upper_case"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	}
+]

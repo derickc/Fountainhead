@@ -1,0 +1,28 @@
+[
+	{
+		"args":
+		{
+			"extend": true,
+			"to": "bol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args": null,
+		"command": "upper_case"
+	},
+	{
+		"args":
+		{
+			"file": "res://Packages/Default/Add Line.sublime-macro"
+		},
+		"command": "run_macro_file"
+	},
+	{
+		"args":
+		{
+			"file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"
+		},
+		"command": "run_macro_file"
+	}
+]

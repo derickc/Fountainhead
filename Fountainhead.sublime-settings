@@ -1,0 +1,100 @@
+{
+    "extensions":
+    [
+    "fountain"
+    ],
+    // Monospaced Fonts
+    // Find more fonts at: http://www.fontsquirrel.com/fonts/list/classification/monospaced
+    // "font_face": "Menlo",
+    // "font_face": "Lekton",
+    "font_face": "Source Code Pro Light",
+    // "font_face": "Courier",
+    // "font_face": "Courier Screenplay",
+    // "font_face": "Courier Final Draft",
+    // "font_face": "Courier Prime",
+    // "font_face": "Iconsolata",
+    // "font_face": "Inconsolata-dz",
+    "font_size": 18,
+
+    // Comment out all color_scheme's if you want to use Sublime's default color schemes (Program restart  or reopening document may be required for changes to take effect)
+    // "color_scheme": "Packages/Fountainhead/Ebony.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/Ivory.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/Night.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/Day.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/OdysseusDark.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/OdysseusLight.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/Superbman.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/Bezarro.tmTheme",
+    "color_scheme": "Packages/Fountainhead/SolarizedDark.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/SolarizedLight.tmTheme",
+
+
+    // Enables auto-completions of character and scene headings when the first character typed on a line is lowercase or a period
+    "auto_complete": true,
+    "auto_complete_selector": "constant.character",
+    "word_separators": "/\\()\"-:,;<>~!@#$%^&*|+=[]{}`~?",
+    "draw_indent_guides": false,
+
+    // Always show fold buttons in the gutter
+    "fade_fold_buttons": false,
+    "indent_subsequent_lines": true,
+    "auto_indent": false,
+    "draw_white_space": "selection", //"all" "none" "selection"
+    "word_wrap": true,
+    "wrap_width": 62,
+    "gutter": true,
+    "margin": 0,
+    "caret_extra_top": 2,
+    "caret_extra_bottom": 2,
+    "caret_extra_width": 0,
+    "line_padding_top": 1,
+    "highlight_line": true,
+    "draw_centered": true,
+    "spell_check": true,
+    "fold_buttons": true,
+    "trim_automatic_white_space": true,
+    "line_numbers": false,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "use_tab_stops": true,
+    "shift_tab_unindent": true,
+    "auto_complete_commit_on_tab": true,
+    "tab_completion": true,
+    "auto_complete_with_fields": false,
+
+    // Automatically save your progress
+    "auto_save": false,
+    // Saves after the desired number of key strokes; useful when used with a program like Marked
+    "auto_save_count": 42,
+    // saves when you go to another window or bring up an overlay
+    "save_on_focus_lost": false,
+
+    // Automatically scrolls the page up when you reach the bottom of the screen
+    "auto_scroll": true,
+
+    // Automatically hides Boneyard, Synopses, or Notes when opening a file
+    "fold_boneyard": false,
+    "fold_synopses": false,
+    "fold_notes": false,
+
+    // Automatically create a list of characters
+    "characters": true,
+
+    // Automatically create a list of scene headings
+    "scenes": true,
+
+    // automatically add (CONT'D) to character names
+    "contd": true,
+
+    // Toggle key binding commands
+    // move cursor forward using shift + space or by pressing tab inside notes, parentheses, quotes, and underlined/bold/italic content
+    "forward_cursor": true,
+    // toggle boneyard, synopses, and notes folding
+    "fold_text": true,
+    // automatically capitalize scene headings, transitions, and character names when pressing enter
+    "line_cap": true,
+    // automatically places a blank line after scene headings, action, transitions, and dialogue
+    "auto_line": true,
+    // automatically wrap/unwrap text when using markdown text emphasis
+    "text_emphasis": true
+}

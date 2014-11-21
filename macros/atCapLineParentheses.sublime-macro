@@ -1,0 +1,39 @@
+[
+	{
+		"args":
+		{
+			"by": "words",
+			"extend": true,
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "words",
+			"extend": true,
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args": null,
+		"command": "upper_case"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"file": "res://Packages/Default/Add Line.sublime-macro"
+		},
+		"command": "run_macro_file"
+	}
+]

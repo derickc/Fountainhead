@@ -1,0 +1,39 @@
+[
+    {
+        "caption": "Fountainhead: Show/Hide Boneyard",
+        "command": "hide_boneyard"
+    },
+    {
+        "caption": "Fountainhead: Show/Hide Synopses",
+        "command": "hide_synopses"
+    },
+    {
+        "caption": "Fountainhead: Show/Hide Notes",
+        "command": "hide_notes"
+    },
+    {
+        "caption": "Fountainhead: Show Character List",
+        "command": "show_characters"
+    },
+    {
+        "caption": "Fountainhead: Show Scene List",
+        "command": "show_scenes"
+    },
+    {
+        "caption": "Fountainhead: Update Character List",
+        "command": "update_character_list"
+    },
+    {
+        "caption": "Fountainhead: Update Scene List",
+        "command": "update_scene_list"
+    },
+    {
+        "caption": "Fountainhead: Update Character (CONT'D)s",
+        "command": "update_contd"
+    },
+    {
+        "caption": "Fountainhead: Remove all Character (CONT'D)s",
+        "command": "remove_all_contd"
+    }
+
+]

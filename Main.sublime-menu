@@ -1,0 +1,221 @@
+[
+    {
+        "id": "tools",
+        "caption": "Tools",
+        "children":
+        [
+            {
+                "id": "Fountainhead",
+                "mnemonic": "f",
+                "caption": "Fountainhead",
+                "children":
+                [
+                    {
+                        "command": "hide_boneyard",
+                        "caption": "Boneyard: Show/Hide"
+                    },
+                    {
+                        "command": "hide_synopses",
+                        "caption": "Synopses: Show/Hide"
+                    },
+                    {
+                        "command": "hide_notes",
+                        "caption": "Notes: Show/Hide"
+                    },
+                    { "caption": "-" },
+                    {
+                        "command": "lower_case",
+                        "caption": "Convert to Lower Case"
+                    },
+                    {
+                        "command": "upper_case",
+                        "caption": "Convert to Upper Case"
+                    },
+                    { "caption": "-" },
+                    {
+                        "command": "show_overlay", 
+                        "args": {"overlay": "goto", "text": "@"},
+                        "caption": "Goto..."
+                    },
+                    {
+                        "command": "toggle_minimap"
+                    },
+                    { "caption": "-" },
+                    {
+                        "command": "show_characters",
+                        "caption": "Show Character List"
+                    },
+                    {
+                        "command": "show_scenes",
+                        "caption": "Show Scene List"
+                    },
+                    { "caption": "-" },
+                    {
+                        "command": "update_character_list",
+                        "caption": "Update Character List"
+                    },
+                    {
+                        "command": "update_scene_list",
+                        "caption": "Update Scene List"
+                    },
+                    {
+                        "command": "update_contd",
+                        "caption": "Update Character (CONT'D)s"
+                    },
+                    {
+                        "command": "remove_all_contd",
+                        "caption": "Remove all Character (CONT'D)s"
+                    },
+                    { "caption": "-" },
+                    {
+                        "caption": "Preferences",
+                        "children":
+                        [
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Fountainhead/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Fountainhead/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Fountainhead/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            { "caption": "-" },                           
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/Fountainhead/Fountainhead.sublime-settings"},
+                                "caption": "Fountain Settings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/Fountainhead.sublime-settings"},
+                                "caption": "Fountain Settings – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "Fountainhead",
+                        "children":
+                        [
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Fountainhead/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Fountainhead/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Fountainhead/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            { "caption": "-" },
+                            
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/Fountainhead/Fountainhead.sublime-settings"},
+                                "caption": "Fountain Settings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/Fountainhead.sublime-settings"},
+                                "caption": "Fountain Settings – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
