@@ -1,6 +1,0 @@
-{
-		"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",
-
-		"completions":
-		["ext. castle - night","int. castle - day","int. house - night"]
-}
