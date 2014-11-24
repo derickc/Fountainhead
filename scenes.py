@@ -1,8 +1,8 @@
 import sublime
 import sublime_plugin
 import re
-import os
-import sys
+# import os
+# import sys
 import platform
 from .sublime_helper import *
 
@@ -42,29 +42,32 @@ class Scenes(sublime_plugin.EventListener):
                             scene = re.split(r'^\s*', scene)[1]
                         if scene not in self.scene_headings:
                             self.scene_headings.append(scene)
-                            if user_os == 'Windows':
-                                print("Sorry, not supported at this time.")
-                            elif user_os == 'Darwin':
-                                if scene.lower() not in self.major_scenes:
-                                    self.major_scenes.append(scene.lower())
-                                    self.major_scenes = sorted(self.major_scenes)
-                                    proc_env = os.environ.copy()
-                                    encoding = sys.getfilesystemencoding()
-                                    for k, v in proc_env.items():
-                                        proc_env[k] = os.path.expandvars(v).encode(encoding)
-                                    user = (proc_env['HOME']).decode(encoding='UTF-8')
-                                    completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Scenes.sublime-completions', 'w')
-                                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
-                                    length = len(self.major_scenes)
-                                    scene_counter = 0
-                                    for scene in self.major_scenes:
-                                        if scene_counter < length - 1:
-                                            completions.write('"%s",' % scene)
-                                            scene_counter += 1
-                                        else:
-                                            completions.write('"%s"' % scene)
-                                    completions.write(']\n}')
-                                    completions.close()
+                            # if user_os == 'Windows':
+                            #     print("Sorry, not supported at this time.")
+                            # elif user_os == 'Darwin':
+                            if scene.lower() not in self.major_scenes:
+                                self.major_scenes.append(scene.lower())
+                                self.major_scenes = sorted(self.major_scenes)
+                                # proc_env = os.environ.copy()
+                                # encoding = sys.getfilesystemencoding()
+                                # for k, v in proc_env.items():
+                                #     proc_env[k] = os.path.expandvars(v).encode(encoding)
+                                # user = (proc_env['HOME']).decode(encoding='UTF-8')
+                                # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Scenes.sublime-completions', 'w')
+                                packages_directory = sublime.packages_path()
+                                completions_file = packages_directory + '/Fountainhead/Scenes.sublime-completions'
+                                completions = open(completions_file, 'w')
+                                completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                                length = len(self.major_scenes)
+                                scene_counter = 0
+                                for scene in self.major_scenes:
+                                    if scene_counter < length - 1:
+                                        completions.write('"%s",' % scene)
+                                        scene_counter += 1
+                                    else:
+                                        completions.write('"%s"' % scene)
+                                completions.write(']\n}')
+                                completions.close()
                             # Clear out scene list message
                             view.set_status('SceneList',
                                             '')
@@ -94,31 +97,34 @@ class Scenes(sublime_plugin.EventListener):
                             counter += 1
                     except IndexError:
                         pass
-                    if user_os == 'Windows':
-                        print("Sorry, not supported at this time.")
-                    elif user_os == 'Darwin':
-                        for scene in self.scene_headings:
-                            self.major_scenes.append(scene.lower())
-                        self.major_scenes = sorted(self.major_scenes)
-                        proc_env = os.environ.copy()
-                        encoding = sys.getfilesystemencoding()
-                        for k, v in proc_env.items():
-                            proc_env[k] = os.path.expandvars(v).encode(encoding)
-                        user = (proc_env['HOME']).decode(encoding='UTF-8')
+                    # if user_os == 'Windows':
+                    #     print("Sorry, not supported at this time.")
+                    # elif user_os == 'Darwin':
+                    for scene in self.scene_headings:
+                        self.major_scenes.append(scene.lower())
+                    self.major_scenes = sorted(self.major_scenes)
+                    # proc_env = os.environ.copy()
+                    # encoding = sys.getfilesystemencoding()
+                    # for k, v in proc_env.items():
+                    #     proc_env[k] = os.path.expandvars(v).encode(encoding)
+                    # user = (proc_env['HOME']).decode(encoding='UTF-8')
 
-                        completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Scenes.sublime-completions', 'w')
-                        completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                    # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Scenes.sublime-completions', 'w')
+                    packages_directory = sublime.packages_path()
+                    completions_file = packages_directory + '/Fountainhead/Scenes.sublime-completions'
+                    completions = open(completions_file, 'w')
+                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
 
-                        length = len(self.major_scenes)
-                        scene_counter = 0
-                        for scene in self.major_scenes:
-                            if scene_counter < length - 1:
-                                completions.write('"%s",' % scene)
-                                scene_counter += 1
-                            else:
-                                completions.write('"%s"' % scene)
-                        completions.write(']\n}')
-                        completions.close()
+                    length = len(self.major_scenes)
+                    scene_counter = 0
+                    for scene in self.major_scenes:
+                        if scene_counter < length - 1:
+                            completions.write('"%s",' % scene)
+                            scene_counter += 1
+                        else:
+                            completions.write('"%s"' % scene)
+                    completions.write(']\n}')
+                    completions.close()
                     # Print confirmation message
                     view.set_status('SceneList',
                                     'SCENES FOUND!')

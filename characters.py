@@ -1,8 +1,8 @@
 import sublime
 import sublime_plugin
 import re
-import os
-import sys
+# import os
+# import sys
 import platform
 from .sublime_helper import *
 
@@ -47,51 +47,55 @@ class Characters(sublime_plugin.EventListener):
                             name = re.split(r'^\s*', name)[1]
                         if name not in self.characters:
                             self.characters.append(name)
-                            if user_os == 'Windows':
-                                print("Sorry, not supported at this time.")
-                            elif user_os == 'Darwin':
-                                if name[0] != '@':
-                                    if name.lower() not in self.lower_characters:
-                                        self.lower_characters.append(name.lower())
-                                        self.lower_characters = sorted(self.lower_characters)
-                                        proc_env = os.environ.copy()
-                                        encoding = sys.getfilesystemencoding()
-                                        for k, v in proc_env.items():
-                                            proc_env[k] = os.path.expandvars(v).encode(encoding)
-                                        user = (proc_env['HOME']).decode(encoding='UTF-8')
-                                        completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
-                                        completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
-                                        length = len(self.lower_characters)
-                                        character_counter = 0
-                                        for character in self.lower_characters:
-                                            if character_counter < length - 1:
-                                                completions.write('"%s",' % character)
-                                                character_counter += 1
-                                            else:
-                                                completions.write('"%s"' % character)
-                                        completions.write(']\n}')
-                                        completions.close()
-                                elif name[0] == '@':
-                                    if name not in self.lower_characters:
-                                        self.lower_characters.append(name)
-                                        self.lower_characters = sorted(self.lower_characters)
-                                        proc_env = os.environ.copy()
-                                        encoding = sys.getfilesystemencoding()
-                                        for k, v in proc_env.items():
-                                            proc_env[k] = os.path.expandvars(v).encode(encoding)
-                                        user = (proc_env['HOME']).decode(encoding='UTF-8')
-                                        completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
-                                        completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
-                                        length = len(self.lower_characters)
-                                        character_counter = 0
-                                        for character in self.lower_characters:
-                                            if character_counter < length - 1:
-                                                completions.write('"%s",' % character)
-                                                character_counter += 1
-                                            else:
-                                                completions.write('"%s"' % character)
-                                        completions.write(']\n}')
-                                        completions.close()
+                            packages_directory = sublime.packages_path()
+                            completions_file = packages_directory + '/Fountainhead/Characters.sublime-completions'
+                            # if user_os == 'Windows':
+                                # print("Sorry, not supported at this time.")
+                            # elif user_os == 'Darwin':
+                            if name[0] != '@':
+                                if name.lower() not in self.lower_characters:
+                                    self.lower_characters.append(name.lower())
+                                    self.lower_characters = sorted(self.lower_characters)
+                                    # proc_env = os.environ.copy()
+                                    # encoding = sys.getfilesystemencoding()
+                                    # for k, v in proc_env.items():
+                                        # proc_env[k] = os.path.expandvars(v).encode(encoding)
+                                    # user = (proc_env['HOME']).decode(encoding='UTF-8')
+                                    # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
+                                    completions = open(completions_file, 'w')
+                                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                                    length = len(self.lower_characters)
+                                    character_counter = 0
+                                    for character in self.lower_characters:
+                                        if character_counter < length - 1:
+                                            completions.write('"%s",' % character)
+                                            character_counter += 1
+                                        else:
+                                            completions.write('"%s"' % character)
+                                    completions.write(']\n}')
+                                    completions.close()
+                            elif name[0] == '@':
+                                if name not in self.lower_characters:
+                                    self.lower_characters.append(name)
+                                    self.lower_characters = sorted(self.lower_characters)
+                                    # proc_env = os.environ.copy()
+                                    # encoding = sys.getfilesystemencoding()
+                                    # for k, v in proc_env.items():
+                                    #     proc_env[k] = os.path.expandvars(v).encode(encoding)
+                                    # user = (proc_env['HOME']).decode(encoding='UTF-8')
+                                    # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
+                                    completions = open(completions_file, 'w')
+                                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                                    length = len(self.lower_characters)
+                                    character_counter = 0
+                                    for character in self.lower_characters:
+                                        if character_counter < length - 1:
+                                            completions.write('"%s",' % character)
+                                            character_counter += 1
+                                        else:
+                                            completions.write('"%s"' % character)
+                                    completions.write(']\n}')
+                                    completions.close()
                             # Clear out character list message
                             view.set_status('CharacterList',
                                             '')
@@ -125,32 +129,35 @@ class Characters(sublime_plugin.EventListener):
                             counter += 1
                     except IndexError:
                         pass
-                    if user_os == 'Windows':
-                        print("Sorry, not supported at this time.")
-                    elif user_os == 'Darwin':
-                        for character in self.characters:
-                            if character[0] != '@':
-                                self.lower_characters.append(character.lower())
-                            if character[0] == '@':
-                                self.lower_characters.append(character)
-                        self.lower_characters = sorted(self.lower_characters)
-                        proc_env = os.environ.copy()
-                        encoding = sys.getfilesystemencoding()
-                        for k, v in proc_env.items():
-                            proc_env[k] = os.path.expandvars(v).encode(encoding)
-                        user = (proc_env['HOME']).decode(encoding='UTF-8')
-                        completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
-                        completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
-                        length = len(self.lower_characters)
-                        character_counter = 0
-                        for character in self.lower_characters:
-                            if character_counter < length - 1:
-                                completions.write('"%s",' % character)
-                                character_counter += 1
-                            else:
-                                completions.write('"%s"' % character)
-                        completions.write(']\n}')
-                        completions.close()
+                    # if user_os == 'Windows':
+                    #     print("Sorry, not supported at this time.")
+                    # elif user_os == 'Darwin':
+                    for character in self.characters:
+                        if character[0] != '@':
+                            self.lower_characters.append(character.lower())
+                        if character[0] == '@':
+                            self.lower_characters.append(character)
+                    self.lower_characters = sorted(self.lower_characters)
+                    # proc_env = os.environ.copy()
+                    # encoding = sys.getfilesystemencoding()
+                    # for k, v in proc_env.items():
+                    #     proc_env[k] = os.path.expandvars(v).encode(encoding)
+                    # user = (proc_env['HOME']).decode(encoding='UTF-8')
+                    # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
+                    packages_directory = sublime.packages_path()
+                    completions_file = packages_directory + '/Fountainhead/Characters.sublime-completions'
+                    completions = open(completions_file, 'w')
+                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                    length = len(self.lower_characters)
+                    character_counter = 0
+                    for character in self.lower_characters:
+                        if character_counter < length - 1:
+                            completions.write('"%s",' % character)
+                            character_counter += 1
+                        else:
+                            completions.write('"%s"' % character)
+                    completions.write(']\n}')
+                    completions.close()
                     # Print confirmation message
                     view.set_status('CharacterList',
                                     'CHARACTERS FOUND!')
