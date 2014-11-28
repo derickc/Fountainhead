@@ -23,10 +23,10 @@
     // "color_scheme": "Packages/Fountainhead/schemes/Day.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/OdysseusDark.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/OdysseusLight.tmTheme",
-    "color_scheme": "Packages/Fountainhead/schemes/Superbman.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/Superbman.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/Bezarro.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/SolarizedDark.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/schemes/SolarizedLight.tmTheme",
+    "color_scheme": "Packages/Fountainhead/schemes/SolarizedLight.tmTheme",
 
 
     // Enables auto-completions of character and scene headings when the first character typed on a line is lowercase or a period

@@ -37,11 +37,11 @@ class AutoScrollCommand(sublime_plugin.EventListener):
                         self.currentRow = (view.rowcol(view.sel()[0].begin()))[0]
                         self.scope = view.scope_name(view.text_point((self.currentRow - self.rowCounter - 1), 0))
                         # Needed?
-                        if (self.scope == 'text.fountain keyword entity.other.attribute-name '):
-                            self.rowCounter += 1
+                        # if (self.scope == 'text.fountain keyword entity.other.attribute-name '):
+                        #     self.rowCounter += 1
                         # Needed?
-                        elif (self.scope == 'text.fountain keyword '):
-                            self.rowCounter += 1
+                        # elif (self.scope == 'text.fountain keyword '):
+                        #     self.rowCounter += 1
                         elif (self.scope == 'text.fountain ') and (view.text_point((self.currentRow - self.rowCounter), 0) == view.text_point((self.currentRow - self.rowCounter - 1), 1)):
                             self.rowCounter += 1
                         # Scene Heading
@@ -149,6 +149,21 @@ class AutoScrollCommand(sublime_plugin.EventListener):
                                 view.set_status('AutoScrollCommand', 'Pages written: %d' % self.pagesWritten)
                                 self.stopCounter = 1
                                 self.rowCounter = 1
+                        # Boneyard
+                        # elif (self.scope == 'text.fountain comment '):
+                        #     self.newY = view.text_to_layout((view.text_point((self.currentRow - self.rowCounter - 1), 0)))[1]
+                        #     if (((self.currentY - self.newY) / self.lineHeight) > self.lineAmount):
+                        #         view.run_command('scroll_lines', {"amount": -(self.pageLines - self.scrollAmount)})
+                        #         self.pagesWritten += 1
+                        #         view.set_status('AutoScrollCommand', 'Pages written: %d' % self.pagesWritten)
+                        #         self.stopCounter = 1
+                        #         self.rowCounter = 1
+                        #     else:
+                        #         view.run_command('scroll_lines', {"amount": -(((self.newY - self.viewportY) / self.lineHeight) - (0.5))})
+                        #         self.pagesWritten += 1
+                        #         view.set_status('AutoScrollCommand', 'Pages written: %d' % self.pagesWritten)
+                        #         self.stopCounter = 1
+                        #         self.rowCounter = 1
                         else:
                             self.rowCounter += 1
 

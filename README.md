@@ -5,6 +5,8 @@ Contextual screenwriting environment that leverages the speed of [Sublime Text](
 
 Inspired by Jonathan Poritsky's [Fountain for Sublime Text](https://github.com/poritsky/fountain-sublime-text) package.
 
+Compatible with Sublime Text [2](http://www.sublimetext.com) and [3](http://www.sublimetext.com/3). Optimized for [Sublime Text 3](http://www.sublimetext.com/3).
+
 ## Installation 
 
 ### Option A: Package Control
@@ -15,10 +17,9 @@ Inspired by Jonathan Poritsky's [Fountain for Sublime Text](https://github.com/p
 ### Option B: GitHub
 1. [Download the ZIP of this repository](https://github.com/derickc/Fountainhead/archive/master.zip) and uncompress it.
 2. Move the uncompressed **Fountainhead** folder to the appropriate packages directory:
-    - Mac OS X: `~/Library/Application Support/Sublime Text 3/Packages/`
-        - In Sublime Text 3 you can get to this directory by selecting: `Sublime Text > Preferences > Browse Packages...`
-        - In the Finder you can get to the hidden **Library** directory by holding the `Option / Alt` key and selecting `Go > Library`
-3. Launch **Sublime Text 3**.
+    - In Sublime Text, select: `Sublime Text > Preferences > Browse Packages...`
+    - Place the **Fountainhead** folder inside the open **Packages** d
+3. Launch **Sublime Text**.
 
 ## Quickstart
 
