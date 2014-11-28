@@ -4,9 +4,9 @@
 <dict>
     <key>author</key>
     <string>Derick</string>
-    <!-- Based on Ethan Schoonover's Solarized theme http://ethanschoonover.com/solarized -->
+    <!-- Inspired by the Ulysses Freestraction theme -->
     <key>name</key>
-    <string>Fountainhead</string>
+    <string>OdysseueDark</string>
     <key>scope</key>
     <string>text.html.markdown.fountain</string>
     <key>settings</key>
@@ -15,24 +15,24 @@
             <key>settings</key>
             <dict>
                 <key>background</key>
-                <!-- Base03 -->
-                <string>#002b36</string>
+                <string>#1a1a1a</string>
                 <key>caret</key>
-                <!-- Base3 -->
-                <string>#fdf6e3</string>
+                <string>#34c4e0</string>
                 <!-- Action, Centered Text, Title Page -->
                 <key>foreground</key>
-                <!-- Base1 -->
-                <string>#93a1a1</string>
+                <string>#939293</string>
                 <key>invisibles</key>
-                <!-- Base1 -->
-                <string>#93a1a1</string>
+                <string>#939293</string>
                 <key>lineHighlight</key>
-                <!-- Base02 -->
-                <string>#073642</string>
+                <string>#2e2e2e</string>
                 <key>selection</key>
-                <!-- Base02 -->
-                <string>#073642</string>
+                <string>#424242</string>
+                <key>selectionForeground</key>
+                <string>#dcdcdc</string>
+                <key>inactiveSelection</key>
+                <string>#dcdcdc</string>
+                <key>inactiveSelectionForeground</key>
+                <string>#424242</string>
                 <key>bracketsForeground</key>
                 <string>#F8F8F2A5</string>
                 <key>bracketsOptions</key>
@@ -51,8 +51,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Green -->
-                <string>#859900</string>
+                <string>#a91d66</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -65,8 +64,9 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Blue -->
-                <string>#268bd2</string>
+                <string>#007fb4</string>
+                <key>background</key>
+                <string>#103747</string>
                 <key>fontStyle</key>
                 <string>bold</string>
             </dict>
@@ -79,20 +79,18 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Violet -->
-                <string>#6c71c4</string>
+                <string>#007fb4</string>
             </dict>
         </dict>
         <dict>
             <key>name</key>
-            <string>Dialogue and Lyrics</key>
+            <string>Dialogue and Lyrics</string>
             <key>scope</key>
             <string>string</string>
             <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <!-- Base00 -->
-                    <string>#657b83</string>
+                    <string>#939293</string>
                 </dict>
         </dict>
         <dict>
@@ -103,8 +101,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Cyan -->
-                <string>#2aa198</string>
+                <string>#007fb4</string>
             </dict>
         </dict>
         <dict>
@@ -115,8 +112,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Magenta -->
-                <string>#d33682</string>
+                <string>#a91d66</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -129,8 +125,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Orange -->
-                <string>#cb4b16</string>
+                <string>#0d7a46</string>
             </dict>
         </dict>
         <dict>
@@ -141,8 +136,9 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Yellow -->
-                <string>#b58900</string>
+                <string>#323232</string>
+                <key>background</key>
+                <string>#fff8b5</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -155,8 +151,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Lighter Base02 -->
-                <string>#0c5c70</string>
+                <string>#5e5c47</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -171,8 +166,7 @@
                 <key>fontStyle</key>
                 <string>bold</string>
                 <key>foreground</key>
-                <!-- Red -->
-                <string>#dc322f</string>
+                <string>#a91d66</string>
             </dict>
         </dict>
         <dict>
@@ -185,8 +179,7 @@
                 <key>fontStyle</key>
                 <string>italic</string>
                 <key>foreground</key>
-                <!-- Red -->
-                <string>#dc322f</string>
+                <string>#a91d66</string>
             </dict>
         </dict>
         <dict>
@@ -199,8 +192,7 @@
                 <key>fontStyle</key>
                 <string>bold italic</string>
                 <key>foreground</key>
-                <!-- Red -->
-                <string>#dc322f</string>
+                <string>#a91d66</string>
             </dict>
         </dict>
         <dict>
@@ -213,8 +205,7 @@
                 <key>fontStyle</key>
                 <string>underline</string>
                 <key>foreground</key>
-                <!-- Red -->
-                <string>#dc322f</string>
+                <string>#a91d66</string>
             </dict>
         </dict>
         <dict>
@@ -225,8 +216,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Orange -->
-                <string>#cb4b16</string>
+                <string>#0d7a46</string>
             </dict>
         </dict>
         <dict>
@@ -237,12 +227,11 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <!-- Orange -->
-                <string>#cb4b16</string>
+                <string>#9e4577</string>
             </dict>
         </dict>
     </array>
     <key>uuid</key>
-    <string>710463bf-546b-4c42-9932-a35bff89a4fa</string>
+    <string>73fd0561-33cd-4e5a-b993-c9e04b4cf62c</string>
 </dict>
 </plist>

@@ -5,7 +5,7 @@
     <key>author</key>
     <string>Derick</string>
     <key>name</key>
-    <string>Fountainhead</string>
+    <string>Ebony</string>
     <key>scope</key>
     <string>text.html.markdown.fountain</string>
     <key>settings</key>
@@ -81,7 +81,7 @@
         </dict>
         <dict>
             <key>name</key>
-            <string>Dialogue and Lyrics</key>
+            <string>Dialogue and Lyrics</string>
             <key>scope</key>
             <string>string</string>
             <key>settings</key>
