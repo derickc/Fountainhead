@@ -14,19 +14,19 @@
     // "font_face": "Courier Prime",
     // "font_face": "Iconsolata",
     // "font_face": "Inconsolata-dz",
-    "font_size": 18,
+    "font_size": 16,
 
     // Comment out all color_scheme's if you want to use Sublime's default color schemes (Program restart  or reopening document may be required for changes to take effect)
-    // "color_scheme": "Packages/Fountainhead/Ebony.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/Ivory.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/Night.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/Day.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/OdysseusDark.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/OdysseusLight.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/Superbman.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/Bezarro.tmTheme",
-    "color_scheme": "Packages/Fountainhead/SolarizedDark.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/SolarizedLight.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/Ebony.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/Ivory.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/Night.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/Day.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/OdysseusDark.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/OdysseusLight.tmTheme",
+    "color_scheme": "Packages/Fountainhead/schemes/Superbman.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/Bezarro.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/SolarizedDark.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/SolarizedLight.tmTheme",
 
 
     // Enables auto-completions of character and scene headings when the first character typed on a line is lowercase or a period

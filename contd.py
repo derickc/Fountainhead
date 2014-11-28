@@ -1,15 +1,57 @@
 import sublime
 import sublime_plugin
 import re
-from .sublime_helper import *
+# import threading
+# import sys
+try:
+    from .sublime_helper import SublimeHelper
+except (ImportError, ValueError):
+    from sublime_helper import SublimeHelper
+# sys.path.append(sublime.packages_path() + '/Fountainhead')
+# import sublime_helper
 
-cursor_scope = SublimeHelper.cursor_scope
-line_scope = SublimeHelper.line_scope
-line_string = SublimeHelper.line_string
-scope_list = SublimeHelper.scope_list
+# if int(sublime.version()) < 3000:
+#     on_modified_async = sublime.on_modified
 
 character1 = ''
 character2 = ''
+
+
+# class SublimeHelper(sublime_plugin.EventListener):
+
+#     def cursor_scope(self, view, offset=1):
+#         '''
+#         Gives the scope based on cursor position.
+#         '''
+#         return view.scope_name(view.sel()[0].end() - offset)
+
+#     def line_scope(self, view, offset=1):
+#         '''
+#         Gives the scope for a given line based on cursor position.  Defaults to the previous line.
+#         '''
+#         return view.scope_name(view.text_point(view.rowcol(view.sel()[0].end())[0] - offset, 0))
+
+#     def line_string(self, view, offset=1):
+#         '''
+#         Gives the string of text for a given line.  Defaults to the previous line.
+#         '''
+#         return view.substr(view.line(view.text_point(view.rowcol(view.sel()[0].end())[0] - offset, 0)))
+
+#     def scope_list(self, view, scope='text.fountain '):
+#         '''
+#         Gives a list of all strings for a given scope.
+#         '''
+#         regions = []
+#         scopes = []
+#         regions = view.find_by_selector(scope)
+#         for region in regions:
+#             scopes.append(view.substr(region))
+#         return scopes
+
+# cursor_scope = s.cursor_scope
+# line_scope = s.line_scope
+# line_string = s.line_string
+# scope_list = s.scope_list
 
 
 class Contd(sublime_plugin.EventListener):
@@ -24,17 +66,18 @@ class Contd(sublime_plugin.EventListener):
             if sublime.load_settings('Fountainhead.sublime-settings').get('contd', False):
                 self.cursor_row = view.rowcol(view.sel()[0].end())[0] - 1
 
-    def on_modified_async(self, view):
+    def modified_contd(self, view):
         if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
             self.cursor_position2 = view.rowcol(view.sel()[0].end())
             if sublime.load_settings('Fountainhead.sublime-settings').get('contd', False) and (self.cursor_position1 != self.cursor_position2):
-                if cursor_scope(self, view) == 'text.fountain string entity.name.class ':
+                s = SublimeHelper()
+                if s.cursor_scope(view) == 'text.fountain string entity.name.class ':
                     self.cursor_row = view.rowcol(view.sel()[0].end())[0] - 1
                     self.cursor_position1 = self.cursor_position2
-                elif cursor_scope(self, view) == 'text.fountain entity.name.function ':
+                elif s.cursor_scope(view) == 'text.fountain entity.name.function ':
                     self.cursor_row = view.rowcol(view.sel()[0].end())[0]
                     self.cursor_position1 = self.cursor_position2
-                elif cursor_scope(self, view) != 'text.fountain string entity.name.class ':
+                elif s.cursor_scope(view) != 'text.fountain string entity.name.class ':
                             # print('cursor row ' + str(self.cursor_row))
                             scope_array = view.find_by_selector('text.fountain entity.name.function ')
                             row_array = []
@@ -58,6 +101,14 @@ class Contd(sublime_plugin.EventListener):
                                 row_end = row
                             self.update_contd(view, row_begin, row_end)
                             self.cursor_position1 = self.cursor_position2
+
+    def on_modified_async(self, view):
+        if int(sublime.version()) >= 3000:
+            self.modified_contd(view)
+
+    def on_modified(self, view):
+        if int(sublime.version()) < 3000:
+            self.modified_contd(view)
 
     def remove_all_contd(self, view):
         if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
@@ -184,11 +235,13 @@ class InsertcontdCommand(sublime_plugin.TextCommand):
 class UpdateContdCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
-        Contd.update_contd(self, self.view)
+        update = Contd()
+        update.update_contd(self.view)
 
 
 class RemoveAllContdCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
-        Contd.remove_all_contd(self, self.view)
+        remove = Contd()
+        remove.remove_all_contd(self.view)
         Contd.cursor_position1 = self.view.rowcol(self.view.sel()[0].end())

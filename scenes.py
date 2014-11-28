@@ -3,15 +3,19 @@ import sublime_plugin
 import re
 # import os
 # import sys
-import platform
-from .sublime_helper import *
+# import platform
+# from .sublime_helper import *
+try:
+    from .sublime_helper import SublimeHelper
+except (ImportError, ValueError):
+    from sublime_helper import SublimeHelper
 
 cursor_scope = SublimeHelper.cursor_scope
 line_scope = SublimeHelper.line_scope
 line_string = SublimeHelper.line_string
 
 user = ''
-user_os = platform.system()
+# user_os = platform.system()
 
 
 class Scenes(sublime_plugin.EventListener):
@@ -24,8 +28,7 @@ class Scenes(sublime_plugin.EventListener):
     current_line = 0
     filename = ''
 
-    def on_modified_async(self, view):
-
+    def modified_scene(self, view):
         if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
             if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
                 if self.scene_headings == []:
@@ -71,6 +74,14 @@ class Scenes(sublime_plugin.EventListener):
                             # Clear out scene list message
                             view.set_status('SceneList',
                                             '')
+
+    def on_modified_async(self, view):
+        if int(sublime.version()) >= 3000:
+            self.modified_scene(view)
+
+    def on_modified(self, view):
+        if int(sublime.version()) < 3000:
+            self.modified_scene(view)
 
     def on_activated(self, view):
 
@@ -138,7 +149,8 @@ class UpdateSceneListCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
         self.scene_headings = []
-        Scenes.on_activated(self, self.view)
+        s = Scenes()
+        s.on_activated(self.view)
 
 
 class ShowScenesCommand(sublime_plugin.TextCommand):
@@ -148,7 +160,7 @@ class ShowScenesCommand(sublime_plugin.TextCommand):
     sorted_scenes = []
 
     def run(self, edit):
-        if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
+        if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True) and int(sublime.version()) >= 3000:
             self.sorted_scenes = sorted(self.unsorted_scenes)
             self.view.show_popup_menu(self.sorted_scenes, self.on_done)
 

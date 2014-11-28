@@ -4,8 +4,9 @@
 <dict>
     <key>author</key>
     <string>Derick</string>
+    <!-- Based on Ethan Schoonover's Solarized theme http://ethanschoonover.com/solarized -->
     <key>name</key>
-    <string>Fountainhead</string>
+    <string>SolarizedDark</string>
     <key>scope</key>
     <string>text.html.markdown.fountain</string>
     <key>settings</key>
@@ -14,30 +15,30 @@
             <key>settings</key>
             <dict>
                 <key>background</key>
-                <string>#f3f3f3</string>
+                <!-- Base03 -->
+                <string>#002b36</string>
                 <key>caret</key>
-                <string>#272822</string>
+                <!-- Base3 -->
+                <string>#fdf6e3</string>
                 <!-- Action, Centered Text, Title Page -->
                 <key>foreground</key>
-                <string>#272822</string>
+                <!-- Base1 -->
+                <string>#93a1a1</string>
                 <key>invisibles</key>
-                <string>#aaaaaa</string>
+                <!-- Base1 -->
+                <string>#93a1a1</string>
                 <key>lineHighlight</key>
-                <string>#ebebeb</string>
+                <!-- Base02 -->
+                <string>#073642</string>
                 <key>selection</key>
-                <string>#272822</string>
-                <key>selectionForeground</key>
-                <string>#f3f3f3</string>
-                <key>inactiveSelection</key>
-                <string>#bbbbbb</string>
-                <key>inactiveSelectionForeground</key>
-                <string>#272822</string>
+                <!-- Base02 -->
+                <string>#073642</string>
                 <key>bracketsForeground</key>
-                <string>#555555A5</string>
+                <string>#F8F8F2A5</string>
                 <key>bracketsOptions</key>
                 <string>underline</string>
                 <key>bracketContentsForeground</key>
-                <string>#555555A5</string>
+                <string>#F8F8F2A5</string>
                 <key>bracketContentsOptions</key>
                 <string>underline</string>
             </dict>
@@ -50,7 +51,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Green -->
+                <string>#859900</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -63,7 +65,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#272822</string>
+                <!-- Blue -->
+                <string>#268bd2</string>
                 <key>fontStyle</key>
                 <string>bold</string>
             </dict>
@@ -76,18 +79,20 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#272822</string>
+                <!-- Violet -->
+                <string>#6c71c4</string>
             </dict>
         </dict>
         <dict>
             <key>name</key>
-            <string>Dialogue and Lyrics</key>
+            <string>Dialogue and Lyrics</string>
             <key>scope</key>
             <string>string</string>
             <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#272822</string>
+                    <!-- Base00 -->
+                    <string>#657b83</string>
                 </dict>
         </dict>
         <dict>
@@ -98,7 +103,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#272822</string>
+                <!-- Cyan -->
+                <string>#2aa198</string>
             </dict>
         </dict>
         <dict>
@@ -109,7 +115,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Magenta -->
+                <string>#d33682</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -122,7 +129,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Orange -->
+                <string>#cb4b16</string>
             </dict>
         </dict>
         <dict>
@@ -133,7 +141,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#ff950f</string>
+                <!-- Yellow -->
+                <string>#b58900</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -146,7 +155,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#c6c6c6</string>
+                <!-- Lighter Base02 -->
+                <string>#0c5c70</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -161,7 +171,8 @@
                 <key>fontStyle</key>
                 <string>bold</string>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Red -->
+                <string>#dc322f</string>
             </dict>
         </dict>
         <dict>
@@ -174,7 +185,8 @@
                 <key>fontStyle</key>
                 <string>italic</string>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Red -->
+                <string>#dc322f</string>
             </dict>
         </dict>
         <dict>
@@ -187,7 +199,8 @@
                 <key>fontStyle</key>
                 <string>bold italic</string>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Red -->
+                <string>#dc322f</string>
             </dict>
         </dict>
         <dict>
@@ -200,7 +213,8 @@
                 <key>fontStyle</key>
                 <string>underline</string>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Red -->
+                <string>#dc322f</string>
             </dict>
         </dict>
         <dict>
@@ -211,7 +225,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Orange -->
+                <string>#cb4b16</string>
             </dict>
         </dict>
         <dict>
@@ -222,11 +237,12 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#aaaaaa</string>
+                <!-- Orange -->
+                <string>#cb4b16</string>
             </dict>
         </dict>
     </array>
     <key>uuid</key>
-    <string>da780661-37b2-4062-a2fe-c85c3867234e</string>
+    <string>710463bf-546b-4c42-9932-a35bff89a4fa</string>
 </dict>
 </plist>

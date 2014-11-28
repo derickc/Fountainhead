@@ -3,15 +3,51 @@ import sublime_plugin
 import re
 # import os
 # import sys
-import platform
-from .sublime_helper import *
+# import platform
+# from .sublime_helper import *
+try:
+    from .sublime_helper import SublimeHelper
+except (ImportError, ValueError):
+    from sublime_helper import SublimeHelper
 
-cursor_scope = SublimeHelper.cursor_scope
-line_scope = SublimeHelper.line_scope
-line_string = SublimeHelper.line_string
+
+# class SublimeHelper(sublime_plugin.EventListener):
+
+#     def cursor_scope(self, view, offset=1):
+#         '''
+#         Gives the scope based on cursor position.
+#         '''
+#         return view.scope_name(view.sel()[0].end() - offset)
+
+#     def line_scope(self, view, offset=1):
+#         '''
+#         Gives the scope for a given line based on cursor position.  Defaults to the previous line.
+#         '''
+#         return view.scope_name(view.text_point(view.rowcol(view.sel()[0].end())[0] - offset, 0))
+
+#     def line_string(self, view, offset=1):
+#         '''
+#         Gives the string of text for a given line.  Defaults to the previous line.
+#         '''
+#         return view.substr(view.line(view.text_point(view.rowcol(view.sel()[0].end())[0] - offset, 0)))
+
+#     def scope_list(self, view, scope='text.fountain '):
+#         '''
+#         Gives a list of all strings for a given scope.
+#         '''
+#         regions = []
+#         scopes = []
+#         regions = view.find_by_selector(scope)
+#         for region in regions:
+#             scopes.append(view.substr(region))
+#         return scopes
+
+# cursor_scope = SublimeHelper.cursor_scope
+# line_scope = SublimeHelper.line_scope
+# line_string = SublimeHelper.line_string
 
 user = ''
-user_os = platform.system()
+# user_os = platform.system()
 
 
 class Characters(sublime_plugin.EventListener):
@@ -25,7 +61,7 @@ class Characters(sublime_plugin.EventListener):
     current_line = 0
     filename = ''
 
-    def on_modified_async(self, view):
+    def modified_character(self, view):
         if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
             if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
                 if self.characters == []:
@@ -36,8 +72,9 @@ class Characters(sublime_plugin.EventListener):
                     self.current_line = view.rowcol(view.sel()[0].end())[0]
                     if view.scope_name(view.text_point(self.previous_line, 0)) == 'text.fountain string entity.name.class ':
                         # get character name from line
+                        s = SublimeHelper()
                         self.current_character = view.substr(view.line(view.text_point(self.previous_line, 0)))
-                        character = line_string(self, view)
+                        character = s.line_string(view)
                         name = self.current_character.split(' (O.S.)')[0]
                         name = name.split(' (V.O.)')[0]
                         name = name.split(' (OS)')[0]
@@ -100,12 +137,20 @@ class Characters(sublime_plugin.EventListener):
                             view.set_status('CharacterList',
                                             '')
 
+    def on_modified_async(self, view):
+        if int(sublime.version()) >= 3000:
+            self.modified_character(view)
+
+    def on_modified(self, view):
+        if int(sublime.version()) < 3000:
+            self.modified_character(view)
+
     def on_activated(self, view):
         if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
             if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
                 if self.filename == view.file_name() and len(self.characters) > 0:
                     pass
-                    print(view.file_name())
+                    # print(view.file_name())
                 else:
                     view.set_status('CharacterList',
                                     'FINDING CHARACTERS...')
@@ -172,7 +217,8 @@ class UpdateCharacterListCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
         self.characters = []
-        Characters.on_activated(self, self.view)
+        c = Characters()
+        c.on_activated(self.view)
 
 
 class ShowCharactersCommand(sublime_plugin.TextCommand):
@@ -182,7 +228,7 @@ class ShowCharactersCommand(sublime_plugin.TextCommand):
     sorted_characters = []
 
     def run(self, edit):
-        if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
+        if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True) and int(sublime.version()) >= 3000:
             self.sorted_characters = sorted(self.unsorted_characters)
             self.view.show_popup_menu(self.sorted_characters, self.on_done)
 
