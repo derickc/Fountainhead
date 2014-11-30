@@ -42,7 +42,7 @@ class AutoScrollCommand(sublime_plugin.EventListener):
                         # Needed?
                         # elif (self.scope == 'text.fountain keyword '):
                         #     self.rowCounter += 1
-                        elif (self.scope == 'text.fountain ') and (view.text_point((self.currentRow - self.rowCounter), 0) == view.text_point((self.currentRow - self.rowCounter - 1), 1)):
+                        if (self.scope == 'text.fountain ') and (view.text_point((self.currentRow - self.rowCounter), 0) == view.text_point((self.currentRow - self.rowCounter - 1), 1)):
                             self.rowCounter += 1
                         # Scene Heading
                         elif (self.scope == 'text.fountain entity.name.function '):

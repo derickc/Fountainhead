@@ -4,9 +4,9 @@ import re
 # import threading
 # import sys
 try:
-    from .sublime_helper import SublimeHelper
+    from .sublime_helper.sublime_helper import SublimeHelper
 except (ImportError, ValueError):
-    from sublime_helper import SublimeHelper
+    from sublime_helper.sublime_helper import SublimeHelper
 # sys.path.append(sublime.packages_path() + '/Fountainhead')
 # import sublime_helper
 

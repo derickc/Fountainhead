@@ -18,8 +18,8 @@ Compatible with Sublime Text [2](http://www.sublimetext.com) and [3](http://www.
 1. [Download the ZIP of this repository](https://github.com/derickc/Fountainhead/archive/master.zip) and uncompress it.
 2. Move the uncompressed **Fountainhead** folder to the appropriate packages directory:
     - In Sublime Text, select: `Sublime Text > Preferences > Browse Packages...`
-    - Place the **Fountainhead** folder inside the open **Packages** d
-3. Launch **Sublime Text**.
+    - Place the **Fountainhead** folder inside the open **Packages** directory.
+3. Relaunch **Sublime Text**.
 
 ## Quickstart
 

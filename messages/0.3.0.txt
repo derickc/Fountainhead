@@ -1,0 +1,4 @@
+Fountainhead 0.3.0 Changelog:
+
+New Features
+ - Add support for Sublime Text 2.

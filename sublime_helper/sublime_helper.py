@@ -1,8 +1,8 @@
 # import sublime
-import sublime_plugin
+# import sublime_plugin
 
 
-class SublimeHelper(sublime_plugin.EventListener):
+class SublimeHelper:
 
     def cursor_scope(self, view, offset=1):
         '''
