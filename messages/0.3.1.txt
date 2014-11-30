@@ -1,0 +1,8 @@
+Fountainhead 0.3.0 Changelog:
+
+Fixed
+ - Semantic version tags
+ - Removed .no-sublime-package
+ - sublime_helper.py moved to sublime_helper/
+ - sublime_helper.py no longer inherits EventListener needlessly
+ - autosave.py no longer excludes ST3.
