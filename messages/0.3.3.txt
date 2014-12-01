@@ -1,0 +1,5 @@
+Fountainhead 0.3.3 Changelog:
+
+Fixed
+ - Character and Scene completion files created in User/Fountainhead/
+ - User/Fountainhead/ is created if it doesn't currently exist

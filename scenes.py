@@ -1,7 +1,7 @@
 import sublime
 import sublime_plugin
 import re
-# import os
+import os
 # import sys
 # import platform
 # from .sublime_helper import *
@@ -57,8 +57,13 @@ class Scenes(sublime_plugin.EventListener):
                                 #     proc_env[k] = os.path.expandvars(v).encode(encoding)
                                 # user = (proc_env['HOME']).decode(encoding='UTF-8')
                                 # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Scenes.sublime-completions', 'w')
-                                packages_directory = sublime.packages_path()
-                                completions_file = packages_directory + '/Fountainhead/Scenes.sublime-completions'
+                                # packages_directory = sublime.packages_path()
+                                # completions_file = packages_directory + '/Fountainhead/Scenes.sublime-completions'
+                                # Create Fountainhead directory if it doesn't exist
+                                packages_directory = sublime.packages_path() + '/User/Fountainhead/'
+                                if not os.path.exists(packages_directory):
+                                    os.mkdir(packages_directory)
+                                completions_file = packages_directory + 'Scenes.sublime-completions'
                                 completions = open(completions_file, 'w')
                                 completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
                                 length = len(self.major_scenes)
@@ -121,8 +126,13 @@ class Scenes(sublime_plugin.EventListener):
                     # user = (proc_env['HOME']).decode(encoding='UTF-8')
 
                     # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Scenes.sublime-completions', 'w')
-                    packages_directory = sublime.packages_path()
-                    completions_file = packages_directory + '/Fountainhead/Scenes.sublime-completions'
+                    # packages_directory = sublime.packages_path()
+                    # completions_file = packages_directory + '/Fountainhead/Scenes.sublime-completions'
+                    # Create Fountainhead directory if it doesn't exist
+                    packages_directory = sublime.packages_path() + '/User/Fountainhead/'
+                    if not os.path.exists(packages_directory):
+                        os.mkdir(packages_directory)
+                    completions_file = packages_directory + 'Scenes.sublime-completions'
                     completions = open(completions_file, 'w')
                     completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
 
