@@ -6,7 +6,7 @@ import os
 # import platform
 # from .sublime_helper import *
 try:
-    from .sublime_helper.__init__ import SublimeHelper
+    from .sublime_helper import SublimeHelper
 except (ImportError, ValueError):
     from sublime_helper import SublimeHelper
 
@@ -29,8 +29,10 @@ class Scenes(sublime_plugin.EventListener):
     filename = ''
 
     def modified_scene(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-            if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
+            if view.settings().get('scenes', True):
                 if self.scene_headings == []:
                     self.on_activated(view)
                 view.set_status('SceneList',
@@ -90,8 +92,10 @@ class Scenes(sublime_plugin.EventListener):
 
     def on_activated(self, view):
 
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-            if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
+            if view.settings().get('scenes', True):
                 if self.filename == view.file_name() and len(self.scene_headings) > 0:
                     pass
                 else:
@@ -170,7 +174,8 @@ class ShowScenesCommand(sublime_plugin.TextCommand):
     sorted_scenes = []
 
     def run(self, edit):
-        if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True) and int(sublime.version()) >= 3000:
+        # if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True) and int(sublime.version()) >= 3000:
+        if self.view.settings().get('scenes', True) and int(sublime.version()) >= 3000:
             self.sorted_scenes = sorted(self.unsorted_scenes)
             self.view.show_popup_menu(self.sorted_scenes, self.on_done)
 
