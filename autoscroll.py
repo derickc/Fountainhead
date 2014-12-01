@@ -1,4 +1,4 @@
-import sublime
+# import sublime
 import sublime_plugin
 
 
@@ -6,14 +6,18 @@ class AutoScrollCommand(sublime_plugin.EventListener):
     pagesWritten = 0
 
     def on_activated(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-            if sublime.load_settings('Fountainhead.sublime-settings').get('auto_scroll', True):
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('auto_scroll', True):
+            if view.settings().get('auto_scroll', True):
                 view.set_status('AutoScrollCommand',
                                 'Pages written: %d' % self.pagesWritten)
 
     def on_modified(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-            if sublime.load_settings('Fountainhead.sublime-settings').get('auto_scroll', True):
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('auto_scroll', True):
+            if view.settings().get('auto_scroll', True):
                 self.currentY = view.text_to_layout(view.sel()[0].begin())[1]
                 self.viewportY = view.viewport_position()[1]
                 self.viewportHeight = view.viewport_extent()[1]

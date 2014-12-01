@@ -26,8 +26,10 @@ class Characters(sublime_plugin.EventListener):
     filename = ''
 
     def modified_character(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-            if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
+            if view.settings().get('characters', True):
                 if self.characters == []:
                     self.on_activated(view)
                 view.set_status('CharacterList', '')
@@ -113,8 +115,10 @@ class Characters(sublime_plugin.EventListener):
             self.modified_character(view)
 
     def on_activated(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-            if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
+            if view.settings().get('characters', True):
                 if self.filename == view.file_name() and len(self.characters) > 0:
                     pass
                     # print(view.file_name())
@@ -200,7 +204,8 @@ class ShowCharactersCommand(sublime_plugin.TextCommand):
     sorted_characters = []
 
     def run(self, edit):
-        if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True) and int(sublime.version()) >= 3000:
+        # if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True) and int(sublime.version()) >= 3000:
+        if self.view.settings().get('characters', True) and int(sublime.version()) >= 3000:
             self.sorted_characters = sorted(self.unsorted_characters)
             self.view.show_popup_menu(self.sorted_characters, self.on_done)
 

@@ -19,13 +19,13 @@
     // Comment out all color_scheme's if you want to use Sublime's default color schemes (Program restart  or reopening document may be required for changes to take effect)
     // "color_scheme": "Packages/Fountainhead/schemes/Ebony.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/Ivory.tmTheme",
-    // "color_scheme": "Packages/Fountainhead/schemes/Night.tmTheme",
+    "color_scheme": "Packages/Fountainhead/schemes/Night.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/Day.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/OdysseusDark.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/OdysseusLight.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/Superbman.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/Bezarro.tmTheme",
-    "color_scheme": "Packages/Fountainhead/schemes/SolarizedDark.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/SolarizedDark.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/SolarizedLight.tmTheme",
 
 

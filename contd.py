@@ -25,14 +25,18 @@ class Contd(sublime_plugin.EventListener):
     cursor_position2 = 0
 
     def on_activated(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-            if sublime.load_settings('Fountainhead.sublime-settings').get('contd', False):
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('contd', False):
+            if view.settings().get('contd', False):
                 self.cursor_row = view.rowcol(view.sel()[0].end())[0] - 1
 
     def modified_contd(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
             self.cursor_position2 = view.rowcol(view.sel()[0].end())
-            if sublime.load_settings('Fountainhead.sublime-settings').get('contd', False) and (self.cursor_position1 != self.cursor_position2):
+            # if sublime.load_settings('Fountainhead.sublime-settings').get('contd', False) and (self.cursor_position1 != self.cursor_position2):
+            if view.settings().get('contd', False) and (self.cursor_position1 != self.cursor_position2):
                 s = SublimeHelper()
                 if s.cursor_scope(view) == 'text.fountain string entity.name.class ':
                     self.cursor_row = view.rowcol(view.sel()[0].end())[0] - 1
@@ -74,7 +78,8 @@ class Contd(sublime_plugin.EventListener):
             self.modified_contd(view)
 
     def remove_all_contd(self, view):
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
             row = 0
             text_point1 = -1
             text_point2 = 0
@@ -100,7 +105,8 @@ class Contd(sublime_plugin.EventListener):
 
     def update_contd(self, view, row_begin=0, row_end=0):
 
-        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
             try:
                 text_point1 = -1
                 text_point2 = 0
