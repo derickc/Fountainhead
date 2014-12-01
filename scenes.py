@@ -6,7 +6,7 @@ import os
 # import platform
 # from .sublime_helper import *
 try:
-    from .sublime_helper.__init__ import SublimeHelper
+    from .sublime_helper import SublimeHelper
 except (ImportError, ValueError):
     from sublime_helper import SublimeHelper
 
