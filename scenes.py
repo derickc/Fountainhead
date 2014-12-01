@@ -6,9 +6,9 @@ import re
 # import platform
 # from .sublime_helper import *
 try:
-    from .sublime_helper.sublime_helper import SublimeHelper
+    from .sublime_helper.__init__ import SublimeHelper
 except (ImportError, ValueError):
-    from sublime_helper.sublime_helper import SublimeHelper
+    from sublime_helper import SublimeHelper
 
 cursor_scope = SublimeHelper.cursor_scope
 line_scope = SublimeHelper.line_scope
