@@ -26,8 +26,8 @@ class Characters(sublime_plugin.EventListener):
     filename = ''
 
     def modified_character(self, view):
-        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
             # if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
             if view.settings().get('characters', True):
                 if self.characters == []:
@@ -115,8 +115,11 @@ class Characters(sublime_plugin.EventListener):
             self.modified_character(view)
 
     def on_activated(self, view):
-        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # s = view.settings().get('syntax')
+        # while s is None:
+        #     s = view.settings().get('syntax')
+        # if 'Fountainhead.tmLanguage' in s:
             # if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True):
             if view.settings().get('characters', True):
                 if self.filename == view.file_name() and len(self.characters) > 0:

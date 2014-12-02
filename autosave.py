@@ -7,8 +7,8 @@ class AutomaticSaveCommand(sublime_plugin.EventListener):
     clicks = 0
 
     def save_me(self, view):
-        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
             # if sublime.load_settings('Fountainhead.sublime-settings').get('auto_save', True):
             if view.settings().get('auto_save', True):
                 # self.clicksTrigger = sublime.load_settings('Fountainhead.sublime-settings').get('auto_save_count', 42)

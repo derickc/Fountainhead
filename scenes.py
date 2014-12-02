@@ -29,8 +29,8 @@ class Scenes(sublime_plugin.EventListener):
     filename = ''
 
     def modified_scene(self, view):
-        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
             # if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
             if view.settings().get('scenes', True):
                 if self.scene_headings == []:
@@ -92,8 +92,8 @@ class Scenes(sublime_plugin.EventListener):
 
     def on_activated(self, view):
 
-        # if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
-        if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
+        if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
+        # if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
             # if sublime.load_settings('Fountainhead.sublime-settings').get('scenes', True):
             if view.settings().get('scenes', True):
                 if self.filename == view.file_name() and len(self.scene_headings) > 0:

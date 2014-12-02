@@ -1,5 +1,5 @@
 Fountainhead
 --------------
-An intuitive Fountain screenwriting environment within Sublime Text 3 that automatically formats your script.
+Contextual Fountain screenwriting environment within Sublime Text that automatically formats your script.
 
 For instructions, please visit: https://github.com/derickc/Fountainhead
