@@ -209,10 +209,24 @@
         </dict>
 
         <!-- Scene Headings -->
-        <key>scene_headings</key>
+        <!-- <key>scene_headings</key>
         <dict>
             <key>match</key>
             <string>^\s*((\.[A-Za-z0-9_]|[Ii][Nn][Tt]\.|[Ii][Nn][Tt] |[Ee][Xx][Tt]\.|[Ee][Xx][Tt] |[Ee][Ss][Tt]\.|[Ee][Ss][Tt] |[Ii][Nn][Tt]/[Ee][Xx][Tt]|[Ii]/[Ee]|[Ff][Ll][Aa][Ss][Hh][Bb][Aa][Cc][Kk])(?:|\.| )(.*?)(?&lt;!  )(#[A-Za-z0-9\-._]+#)? *$)</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.function</string>
+                </dict>
+            </dict>
+        </dict> -->
+
+        <key>scene_headings</key>
+        <dict>
+            <key>match</key>
+            <string>^\s*(?i)((\.[A-Za-z0-9_]|int\.|int |ext\.|ext |est\.|[Ee][Ss][Tt] |[Ii][Nn][Tt]/[Ee][Xx][Tt]|[Ii]/[Ee]|[Ff][Ll][Aa][Ss][Hh][Bb][Aa][Cc][Kk])(?:|\.| )(.*?)(?&lt;!  )(#[A-Za-z0-9\-._]+#)? *$)</string>
             <key>captures</key>
             <dict>
                 <key>1</key>
@@ -363,7 +377,8 @@
         <key>title_page</key>
         <dict>
             <key>name</key>
-            <string>foreground</string>
+            <!-- <string>foreground</string> -->
+            <string>constant.numeric</string>
             <key>begin</key>
             <string>^(?i)(format|title|credit|authors?|source|draft date|contact|copyright|notes):</string>
             <key>end</key>
@@ -373,7 +388,7 @@
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>foreground</string>
+                    <string>constant.numeric</string>
                 </dict>
             </dict>
             <key>applyEndPatternLast</key>
@@ -409,7 +424,7 @@
             <key>name</key>
             <string>entity.name.tag</string>
             <key>match</key>
-            <string>^\s*(&gt;[A-Za-z1-9().  ]+(?!&lt;)|[A-Za-z. ]+ TO:|[Ff][Aa][Dd][Ee] [Oo][Uu][Tt]\.|[Ff][Aa][Dd][Ee] [Ii][Nn]:)\s*</string>
+            <string>^\s*(&gt;[A-Za-z1-9().  ]+(?!&lt;)|[A-Za-z. ]+ TO:|[Ff][Aa][Dd][Ee] [Oo][Uu][Tt]\.|[Ff][Aa][Dd][Ee] [Tt][Oo] [Bb][Ll][Aa][Cc][Kk]\.|[Ff][Aa][Dd][Ee] [Ii][Nn]:)\s*</string>
         </dict>
 
     </dict>
