@@ -1,4 +1,10 @@
 {
+    // To change settings:
+    // 1. Selection > Select All
+    // 2. Edit > Copy
+    // 3. Tools > Fountainhead > Preferences > Fountain Settings - User
+    // 4. Edit > Paste
+    // 5. Comment/Uncomment/Edit (Note: Each setting should only have one active value) 
     "extensions":
     [
     "fountain"
