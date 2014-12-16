@@ -84,7 +84,6 @@
         { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
         { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
         { "key": "selector", "operator": "not_equal", "operand": "string", "match_all": true },
-        { "key": "selector", "operator": "not_equal", "operand": "foreground", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
 
