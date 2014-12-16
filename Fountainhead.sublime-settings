@@ -1,10 +1,11 @@
 {
     // To change settings:
-    // 1. Selection > Select All
-    // 2. Edit > Copy
+    // 1. Selection > Select All (⌘A / ⌃A)
+    // 2. Edit > Copy (⌘C / ⌃C)
     // 3. Tools > Fountainhead > Preferences > Fountain Settings - User
-    // 4. Edit > Paste
-    // 5. Comment/Uncomment/Edit (Note: Each setting should only have one active value) 
+    // 4. Edit > Paste (⌘V / ⌃V)
+    // 5. Comment/Uncomment (⌘/ / ⌃/ or by adding/deleting the // at the beginning of the line) or Edit the value of the setting you want to change (Note: Each setting should only have one active value)
+    // 6. Save (⌘S / ⌃S)
     "extensions":
     [
     "fountain"
@@ -22,10 +23,10 @@
     // "font_face": "Inconsolata-dz",
     "font_size": 16,
 
-    // Comment out all color_scheme's if you want to use Sublime's default color schemes (Program restart  or reopening document may be required for changes to take effect)
+    // Uncomment a desired color_scheme that will only be used when working on .fountain files. Program restart or reopening document may be required for changes to take effect.
     // "color_scheme": "Packages/Fountainhead/schemes/Ebony.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/Ivory.tmTheme",
-    "color_scheme": "Packages/Fountainhead/schemes/Night.tmTheme",
+    // "color_scheme": "Packages/Fountainhead/schemes/Night.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/Day.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/OdysseusDark.tmTheme",
     // "color_scheme": "Packages/Fountainhead/schemes/OdysseusLight.tmTheme",
@@ -66,19 +67,19 @@
     "shift_tab_unindent": true,
     "auto_complete_commit_on_tab": true,
     "tab_completion": true,
-    "auto_complete_with_fields": false,
+    "auto_complete_with_fields": true,
 
     // Automatically save your progress
     "auto_save": false,
-    // Saves after the desired number of key strokes; useful when used with a program like Marked
+    // Saves after the desired number of key strokes; useful when used with a program like Marked 2
     "auto_save_count": 42,
-    // saves when you go to another window or bring up an overlay
+    // Saves when you go to another window or bring up an overlay
     "save_on_focus_lost": false,
 
     // Automatically scrolls the page up when you reach the bottom of the screen
     "auto_scroll": true,
 
-    // Automatically hides Boneyard, Synopses, or Notes when opening a file
+    // Automatically hides Boneyard, Synopses, or Notes when opening a .fountain file
     "fold_boneyard": false,
     "fold_synopses": false,
     "fold_notes": false,
@@ -89,18 +90,18 @@
     // Automatically create a list of scene headings
     "scenes": true,
 
-    // automatically add (CONT'D) to character names
+    // Automatically add (CONT'D) to character names
     "contd": true,
 
     // Toggle key binding commands
-    // move cursor forward using shift + space or by pressing tab inside notes, parentheses, quotes, and underlined/bold/italic content
+    // Move cursor forward using shift + space
     "forward_cursor": true,
-    // toggle boneyard, synopses, and notes folding
+    // Toggle boneyard, synopses, and notes folding keyboard shortcuts
     "fold_text": true,
-    // automatically capitalize scene headings, transitions, and character names when pressing enter
+    // Automatically capitalize scene headings, transitions, and character names when pressing Return
     "line_cap": true,
-    // automatically places a blank line after scene headings, action, transitions, and dialogue
+    // Automatically places a blank line after scene headings, action, transitions, and dialogue
     "auto_line": true,
-    // automatically wrap/unwrap text when using markdown text emphasis
+    // Automatically wrap/unwrap text when using markdown text emphasis
     "text_emphasis": true
 }

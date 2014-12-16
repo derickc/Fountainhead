@@ -1,20 +1,11 @@
 [
-    // Press space twice to move outside of brackets and parentheses
-
-    // { "keys": [" "," "], "command": "move", "args": {"by": "characters", "forward": true}, "context":
- //        [
- //            { "key": "following_text", "operator": "regex_contains", "operand": "^[)};'>\"\\]]", "match_all": true },
-    //      { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true }
- //        ]
- //    },
-
     // Override normal super+enter (insert a blank line)
-    { "keys": ["super+enter"], "command": "insert", "args": {"characters": "\n"}, "context":
-        [
-            { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true }
-        ]
-    },
+    // { "keys": ["super+enter"], "command": "insert", "args": {"characters": "\n"}, "context":
+    //     [
+    //         { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+    //         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true }
+    //     ]
+    // },
 
     // Press Shift + Space to move the cursor forward
 
@@ -27,28 +18,6 @@
             // sublime.load_settings('Fountainhead.sublime-settings').get('auto_save', True)
         ]
     },
-
-    // Press Tab to move outside of notes, parentheticals/parentheses, quotes, and underlined/italic/bold text
-
-    // { "keys": ["tab"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
-    // [
-    //     { "key": "following_text", "operator": "regex_contains", "operand": "^[])_*\"]", "match_all": true },
-    //     { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-    //     { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-    //     { "key": "setting.forward_cursor", "operator": "equal", "operand": true}
-    // ]},
-
-
-    // Doesn't Work. Might not be possible.
-    // Tab Completion for Character and Scene Lists
-    // { "keys": ["tab"], "command": "insert", "args": {"characters": "\n"}, 
-    // "context":
-    //     [
-    //         { "key": "popup_visible", "operator": "equal", "operand": true },
-    //         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-    //         { "key": "setting.characters", "operator": "equal", "operand": true}
-    //     ]
-    // },
 
     // Show Character List
 

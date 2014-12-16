@@ -9,7 +9,15 @@
                 "mnemonic": "f",
                 "caption": "Fountainhead",
                 "children":
-                [
+                [   
+                    {
+                        "command": "open_file",
+                        "args": {
+                            "file": "${packages}/Fountainhead/help.fountain"
+                        },
+                        "caption": "Help"
+                    },
+                    { "caption": "-" },
                     {
                         "command": "hide_boneyard",
                         "caption": "Boneyard: Show/Hide"
@@ -152,6 +160,14 @@
                         "caption": "Fountainhead",
                         "children":
                         [
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Fountainhead/help.fountain"
+                                },
+                                "caption": "Help"
+                            },
+                            { "caption": "-" },
                             {
                                 "command": "open_file",
                                 "args": {

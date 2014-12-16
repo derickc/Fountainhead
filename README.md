@@ -105,7 +105,7 @@ Symbol | Key
 
 Fountainhead offers complete support of the Fountain syntax. For a complete overview of the Fountain syntax, go to [http://fountain.io/syntax](http://fountain.io/syntax).
 
-*Note: Leading spaces and tabs are supported if you're a person who thinks it's wrong for Action and Character to belong in alignment.*
+*Note: Leading spaces and tabs are supported.*
 
 What you want | How to get it
 --------------|---------------
@@ -196,7 +196,7 @@ Pressing ⏎ at the end of lines will have the following effect*:
 
 \**Pressing ⌘⏎ / ⌃⏎ will produce a normal carriage return.*
 
-Element Type | Capitalize All Text | Line Spacing
+Element Type | Uppercase | Line Spacing
 -------------|-----------------|-------------
 Scene Headings | YES | DOUBLE
 Action | NO | DOUBLE
@@ -230,9 +230,13 @@ Pressing ⇧`Space` is the same as pressing → and will move your cursor to the
 
 Fountainhead comes with a variety of custom color schemes, as well as support for all general Sublime Text color schemes.
 
-By default, all custom color schemes are deactivated, allowing you to pick any of Sublime Text's general color schemes be selecting: `Sublime Text > Preferences > Color Scheme`.
+By default, all custom color schemes are deactivated, allowing you to pick any of Sublime Text's general color schemes by selecting:
+`Sublime Text > Preferences > Color Scheme`
 
-You can select one of Fountainhead's custom color schemes by editing your [user settings](#settings), and uncommenting the desired color scheme.
+Fountainhead's custom color schemes can be chosen by selecting:
+`Sublime Text > Preferences > Color Scheme > Fountainhead > schemes`
+
+*Note: If you want a color scheme to only appear when working on a `.fountain` file, you can edit your [user settings](#settings), and uncomment the desired color scheme.*
 
 You may have to close (*save first!*) and re-open your screenplay if your color scheme changes are not seen.
 
@@ -269,11 +273,11 @@ Scenes are remembered and can be autocompleted:
 1. When a document is first loaded, wait for the `SCENES FOUND!` to appear. This process generally takes less than a second.
 - Begin a line with any lowercase letter or a period.
 - When the autocomplete window appears, highlight the desired scene by using ↑/↓, or by typing more letters of the scene heading.
-    - Pressing the `Space` or `Esc` key will cancel the autocompletion, so skip pressing the `Space` key (you could also skip the `-`).
+    - Pressing the `Space` or `Esc` key will cancel the autocompletion, so skip pressing the `Space` key.
 - Press `Tab` to accept the autocompletion.\*
     - Pressing `Return` will only produce a newline, and **not** accept the autocompletion.
 
-\* *If you don't want any of the suggestions, just write like normal. You can choose to close the window by pressing `Esc`.*
+\* *If you don't want any of the suggestions, just write like normal. You can close the window by pressing `Esc`.*
 
 **Sublime Text 3:** ⇧⌃S / ⇧⌘S will bring up a pop-up menu that displays all previously entered scenes. Pressing `Enter` or clicking on it will select the scene (`Tab` will not select the scene).
 
@@ -376,13 +380,13 @@ You can create separate settings by editing: `Sublime Text > Preferences > Setti
 A description of Fountainhead's settings are located in the Default Fountainhead Settings file:
 `Tools > Fountainhead > Preferences > Fountainhead Settings - Default`
 
-If you want to change any of Fountainhead's settings, you must do so in your Fountainhead User Settings file, or else your changes will be lost when Fountainhead is updated:
+If you want to change any of Fountainhead's settings, you must do so in your Fountainhead User Settings file, or else your changes will be lost whenever Fountainhead is updated:
 
 1. Open `Tools > Fountainhead > Preferences > Fountainhead Settings - Default`
 2. Select all of the text: `Selection > Select All` (⌘A / ⌃A)
 3. Open `Tools > Fountainhead > Preferences > Fountain Settings - User`
 4. Paste the copied text: `Edit > Paste` (⌘V / ⌃V)
-5. Comment/Uncomment (⌘/ / ⌃/) or Edit the setting you want to change\*
+5. Comment/Uncomment (⌘/ / ⌃/ or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change\*
 6. Save (⌘S / ⌃S)
 
 \* *Each setting should only have one active value.*
@@ -416,7 +420,6 @@ Key Bindings can be accessed at:
 
 ## Support <a name="support"></a>
 
-Feel free to contact me at: http://classicblunders.com/about
 Feel free to contact me at: `derick` at `unterrible` dot `com`.
 
 ##### [Back to Contents](#contents)

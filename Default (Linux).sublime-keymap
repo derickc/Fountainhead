@@ -1,20 +1,11 @@
 [
-    // Press space twice to move outside of brackets and parentheses
-
-    // { "keys": [" "," "], "command": "move", "args": {"by": "characters", "forward": true}, "context":
- //        [
- //            { "key": "following_text", "operator": "regex_contains", "operand": "^[)};'>\"\\]]", "match_all": true },
-    //      { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true }
- //        ]
- //    },
-
     // Override normal ctrl+enter (insert a blank line)
-    { "keys": ["ctrl+enter"], "command": "insert", "args": {"characters": "\n"}, "context":
-        [
-            { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true }
-        ]
-    },
+    // { "keys": ["ctrl+enter"], "command": "insert", "args": {"characters": "\n"}, "context":
+    //     [
+    //         { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+    //         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true }
+    //     ]
+    // },
 
     // Press Shift + Space to move the cursor forward
 
@@ -25,27 +16,6 @@
             { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
             { "key": "setting.forward_cursor", "operator": "equal", "operand": true}
             // sublime.load_settings('Fountainhead.sublime-settings').get('auto_save', True)
-        ]
-    },
-
-    // Press Tab to move outside of notes, parentheticals/parentheses, quotes, and underlined/italic/bold text
-
-    { "keys": ["tab"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
-    [
-        { "key": "following_text", "operator": "regex_contains", "operand": "^[])_*\"]", "match_all": true },
-        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-        { "key": "setting.forward_cursor", "operator": "equal", "operand": true}
-    ]},
-
-    // Show Character List
-
-    { "keys": ["tab"], "command": "insert", "args": {"characters": "\n"}, 
-    "context":
-        [
-            { "key": "popup_visible", "operator": "equal", "operand": true },
-            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-            { "key": "setting.characters", "operator": "equal", "operand": true}
         ]
     },
 
@@ -103,7 +73,7 @@
     ]   },
 
 
-    // Capitalize character names and minor scene headings; doesn't capitalize notes and comments.
+    // Capitalize character names and minor scene headings; doesn't capitalize notes, comments, and title page.
     { "keys": ["enter"], "command": "run_macro_file", "args": {
     "file": "Packages/Fountainhead/macros/CapLine.sublime-macro"}, 
     "context":
@@ -112,24 +82,29 @@
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
         { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
+        { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
+        { "key": "selector", "operator": "not_equal", "operand": "string", "match_all": true },
+        { "key": "selector", "operator": "not_equal", "operand": "foreground", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
 
 
     // Automatically insert blank lines where appropriate
 
+    // SINGLE LINE is returned instead
     // Insert a blank line after a Dialogue and action text.
-    { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
-    "context":
-        [
-            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]|!|.|?|_|;|,|:|/|*|\"|-][ ]*[\t]*$"},
-            { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
-            { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
-            { "key": "setting.auto_line", "operator": "equal", "operand": true}
-        ]
-    },
+    // { "keys": ["enter"], "command": "run_macro_file", "args": {
+    // "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
+    // "context":
+    //     [
+    //         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+    //         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]|!|.|?|_|;|,|:|/|*|\"|-][ ]*[\t]*$"},
+    //         { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
+    //         { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
+    //         { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
+    //         { "key": "setting.auto_line", "operator": "equal", "operand": true}
+    //     ]
+    // },
 
     // Move the cursor down a line (Same as pressing the down arrow)
     { "keys": ["shift+enter"], "command": "move", "args": {"by": "lines", "forward": true},
@@ -150,28 +125,17 @@
             { "key": "setting.auto_line", "operator": "equal", "operand": true}
         ]
     },
-    
-    // Insert a blank line after centered text
-    { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
-    "context":
-        [
-            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "<[ \t]*$"},
-            { "key": "setting.auto_line", "operator": "equal", "operand": true}
-        ]
-    },
 
     // Single return within Title Page scope
-    { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
-    "context":
-        [
-            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^format[:]|^Format[:]|^title[:]|^Title[:]|^credit[:]|^Credit[:]|^authors[:]|^Authors[:]|^author[:]|^Author[:]|^source[:]|^Source[:]|^draft date[:]|^Draft Date[:]|^Draft date[:]|^contact[:]|^Contact[:]|^copyright[:]|^Copyright[:]|^notes[:]|^Notes[:]"},
-            { "key": "setting.auto_line", "operator": "equal", "operand": true}
-        ]
-    },
+    // { "keys": ["enter"], "command": "run_macro_file", "args": {
+    // "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
+    // "context":
+    //     [
+    //         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+    //         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^format[:]|^Format[:]|^title[:]|^Title[:]|^credit[:]|^Credit[:]|^authors[:]|^Authors[:]|^author[:]|^Author[:]|^source[:]|^Source[:]|^draft date[:]|^Draft Date[:]|^Draft date[:]|^contact[:]|^Contact[:]|^copyright[:]|^Copyright[:]|^notes[:]|^Notes[:]"},
+    //         { "key": "setting.auto_line", "operator": "equal", "operand": true}
+    //     ]
+    // },
 
     // Single return when cursor is on a blank line
     { "keys": ["enter"], "command": "run_macro_file", "args": {
@@ -218,16 +182,96 @@
         ]
     },
 
-    //Capitalize and skip two spaces for transition ":" or slugline that ends in ":"
+    // Single return when line is a title page element
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
+    "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "constant.numeric", "match_all": true },
+            { "key": "setting.auto_line", "operator": "equal", "operand": true}
+        ]
+    },
+
+    // Single return when line is a dialogue element
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
+    "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "string", "match_all": true },
+            { "key": "setting.auto_line", "operator": "equal", "operand": true}
+        ]
+    },
+
+    //Capitalize and skip two lines for transition ":"
     { "keys": ["enter"], "command": "run_macro_file", "args": {
     "file": "Packages/Fountainhead/macros/CapScene.sublime-macro"},
     "context":
     [
-        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": " [Tt][Oo][:]$"},
+        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": " (?i)(to)[:]$"},
         { "key": "auto_complete_visible", "operator": "equal", "operand": false },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
+
+    //Capitalize and skip two lines for transition "FADE IN:"
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/CapScene.sublime-macro"},
+    "context":
+    [
+        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*(?i)(fade in)[:]$"},
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+        { "key": "setting.line_cap", "operator": "equal", "operand": true}
+    ]},
+
+    //Capitalize and skip two lines for transition "FADE OUT."
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/CapScene.sublime-macro"},
+    "context":
+    [
+        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*(?i)(fade out)[.]$"},
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+        { "key": "setting.line_cap", "operator": "equal", "operand": true}
+    ]},
+
+    //Capitalize and skip two lines for transition "FADE TO BLACK."
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/CapScene.sublime-macro"},
+    "context":
+    [
+        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*(?i)(fade to black)[.]$"},
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+        { "key": "setting.line_cap", "operator": "equal", "operand": true}
+    ]},
+
+    //Capitalize and skip two lines for forced ">" transitions
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/CapScene.sublime-macro"},
+    "context":
+        [
+            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*>"},
+            { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "setting.line_cap", "operator": "equal", "operand": true}
+        ]
+    },
+
+    // Insert a blank line after centered text
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
+    "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "<[ \t]*$"},
+            { "key": "setting.auto_line", "operator": "equal", "operand": true}
+        ]
+    },
 
     // Don't capitalize line if cursor is inside or outside of parentheticals.
     { "keys": ["enter"], "command": "run_macro_file", "args": {
@@ -235,7 +279,8 @@
     "context": 
     [
         { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": "^[)]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "entity.other.inherited-class", "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
@@ -245,7 +290,8 @@
     "context": 
     [
         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[)]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "entity.other.inherited-class", "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
@@ -256,7 +302,7 @@
     "context": 
     [
         { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": "^[]][]]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
@@ -266,7 +312,7 @@
     "context": 
     [
         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]][]]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
@@ -277,7 +323,7 @@
     "context": 
     [
         { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": "[*][\/]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
@@ -287,7 +333,7 @@
     "context": 
     [
         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[*][\/]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
@@ -297,23 +343,23 @@
     "file": "Packages/Fountainhead/macros/CapLineParentheses.sublime-macro"},
     "context": 
     [
-        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": ".+[(].*[)]", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-        { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": ".*[)]$", "match_all": true },
+        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": ".+[(].*[)]?", "match_all": true },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        // { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": ".*[)]$", "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         // { "key": "selector", "operator": "not_equal", "operand": "foreground", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
 
-    { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/CapLine.sublime-macro"},
-    "context": 
-    [
-        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": ".+[(].*[)]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-        { "key": "setting.line_cap", "operator": "equal", "operand": true}
-    ]},
+    // { "keys": ["enter"], "command": "run_macro_file", "args": {
+    // "file": "Packages/Fountainhead/macros/CapLine.sublime-macro"},
+    // "context": 
+    // [
+    //     { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": ".+[(].*[)]$", "match_all": true },
+    //     // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+    //     { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+    //     { "key": "setting.line_cap", "operator": "equal", "operand": true}
+    // ]},
 
     // @ Character names that include parenthese have the text within the parenthese capitalized (v.o., o.s., cont'd) but not the character name
 
@@ -321,28 +367,28 @@
     "file": "Packages/Fountainhead/macros/atCapLineParentheses.sublime-macro"},
     "context": 
     [
-        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*@.*[(].*", "match_all": true },
+        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*@.*[(].*[)]?", "match_all": true },
         // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
 
-    { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/atCapLineParentheses.sublime-macro"},
-    "context": 
-    [
-        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*@.*[(].*[)]$", "match_all": true },
-        // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-        { "key": "setting.line_cap", "operator": "equal", "operand": true}
-    ]},
+    // { "keys": ["enter"], "command": "run_macro_file", "args": {
+    // "file": "Packages/Fountainhead/macros/atCapLineParentheses.sublime-macro"},
+    // "context": 
+    // [
+    //     { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*@.*[(].*[)]$", "match_all": true },
+    //     // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+    //     { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+    //     { "key": "setting.line_cap", "operator": "equal", "operand": true}
+    // ]},
 
     //Capitalize Scene Headings
     { "keys": ["enter"], "command": "run_macro_file", "args": {
     "file": "Packages/Fountainhead/macros/CapScene.sublime-macro"},
     "context":
         [
-            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*Int[.]|^[ \t]*Int |^[ \t]*Int/|^[ \t]*Ext/|^[ \t]*EXT/|^[ \t]*ext/|^[ \t]*Ext[.]|^[ \t]*Ext |^[ \t]*I/|^[ \t]*Est[.]|^[ \t]*Est |^[ \t]*INT[.]|^[ \t]*INT |^[ \t]*INT/|^[ \t]*EXT[.]|^[ \t]*EXT |^[ \t]*EST[.]|^[ \t]*EST |^[ \t]*int[.]|^[ \t]*int |^[ \t]*int/|^[ \t]*ext[.]|^[ \t]*ext |^[ \t]*i/|^[ \t]*[.][A-Za-z0-9]|^[ \t]*est[.]|^[ \t]*est |^[ \t]*>|^[ \t]*[_]?[Ff][Ll][Aa][Ss][Hh]"},
+            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "^[ \t]*(?i)(int)[.]? |^[ \t]*(?i)(int)[.]?/|^[ \t]*(?i)(ext)[.]? |^[ \t]*I/|^[ \t]*(?i)(est)[.]? |^[ \t]*(?i)(i)[.]?/|^[ \t]*[.][A-Za-z0-9]|^[ \t]*[_]?(?i)(flash)"},
             // { "key": "auto_complete_visible", "operator": "equal", "operand": false },
             { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
             { "key": "setting.line_cap", "operator": "equal", "operand": true}
