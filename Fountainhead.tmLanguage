@@ -347,6 +347,21 @@
                         </dict>
                     </array>
                 </dict>
+                
+                <!-- \* will behave appropriately and not produce text emphasis -->
+                <dict>
+                    <key>name</key>
+                    <string>foreground</string>
+                    <key>match</key>
+                    <string>\\\*</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>include</key>
+                            <string>#markup</string>
+                        </dict>
+                    </array>
+                </dict>
 
               <dict>
                   <key>patterns</key>
