@@ -54,6 +54,22 @@
         </dict>
         <dict>
             <key>name</key>
+            <string>Title Page</string>
+            <key>scope</key>
+            <string>constant.numeric</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <!-- <string>#0c5986</string> -->
+                <!-- <string>#bf6514</string> -->
+                <string>#75715e</string>
+                <!-- <string>#9c7308</string> -->
+                <key>fontStyle</key>
+                <string>italic</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
             <string>Synopses</string>
             <key>scope</key>
             <string>meta.diff</string>
