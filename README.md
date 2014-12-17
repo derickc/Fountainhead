@@ -133,7 +133,7 @@ Italics | `*`*Italic Text*`*`
 Bold | `**`**Bold Text**`**`
 Bold Italics | `***`***Bold Italic Text***`***`
 Underline | `_`**Underline Text**`_`
-\* and \_ | `\*` and `\_`
+\* | `\*`
 Title Page | Title Page Key that ends with `:` and precedes its value (*Each key can have multiple values by placing them on newlines that are indented 3+ spaces or by a tab*)
 Title: | `Title:` **Title**
 Credit: | `Credit:` **Written by**
