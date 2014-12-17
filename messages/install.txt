@@ -1,5 +1,3 @@
-Fountainhead
---------------
 Contextual Fountain screenwriting environment within Sublime Text that automatically formats your script.
 
 For complete instructions, please visit: https://github.com/derickc/Fountainhead and view the README section.
@@ -75,7 +73,7 @@ Scene Headings   | YES       | DOUBLE
 Action           | NO        | DOUBLE
 Characters (1)   | YES       | SINGLE
 @ Characters (2) | NO        | SINGLE
-Dialogue         | NO        | SINGLE
+Dialogue         | NO        | DOUBLE
 Parenthetical    | NO        | SINGLE
 Transitions      | YES       | DOUBLE
 Notes            | NO        | SINGLE

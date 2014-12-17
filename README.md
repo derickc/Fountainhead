@@ -202,7 +202,7 @@ Scene Headings | YES | DOUBLE
 Action | NO | DOUBLE
 Characters\* | YES | SINGLE
 `@` Characters\** | NO | SINGLE
-Dialogue | NO | SINGLE
+Dialogue | NO | DOUBLE
 Parenthetical | NO | SINGLE
 Transitions | YES | DOUBLE
 Notes | NO | SINGLE

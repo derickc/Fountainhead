@@ -90,20 +90,19 @@
 
     // Automatically insert blank lines where appropriate
 
-    // SINGLE LINE is returned instead
-    // Insert a blank line after a Dialogue and action text.
-    // { "keys": ["enter"], "command": "run_macro_file", "args": {
-    // "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
-    // "context":
-    //     [
-    //         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-    //         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]|!|.|?|_|;|,|:|/|*|\"|-][ ]*[\t]*$"},
-    //         { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
-    //         { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
-    //         { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
-    //         { "key": "setting.auto_line", "operator": "equal", "operand": true}
-    //     ]
-    // },
+    // Insert a blank line after a Dialogue and Action.
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
+    "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]|!|.|?|_|;|,|:|/|*|\"|-][ ]*[\t]*$"},
+            { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
+            { "key": "setting.auto_line", "operator": "equal", "operand": true}
+        ]
+    },
 
     // Move the cursor down a line (Same as pressing the down arrow)
     { "keys": ["shift+enter"], "command": "move", "args": {"by": "lines", "forward": true},
@@ -194,16 +193,16 @@
     },
 
     // Single return when line is a dialogue element
-    { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
-    "context":
-        [
-            { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-            { "key": "selector", "operator": "equal", "operand": "string", "match_all": true },
-            { "key": "setting.auto_line", "operator": "equal", "operand": true}
-        ]
-    },
+    // { "keys": ["enter"], "command": "run_macro_file", "args": {
+    // "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
+    // "context":
+    //     [
+    //         { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+    //         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+    //         { "key": "selector", "operator": "equal", "operand": "string", "match_all": true },
+    //         { "key": "setting.auto_line", "operator": "equal", "operand": true}
+    //     ]
+    // },
 
     //Capitalize and skip two lines for transition ":"
     { "keys": ["enter"], "command": "run_macro_file", "args": {
