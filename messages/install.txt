@@ -1,6 +1,7 @@
 Contextual Fountain screenwriting environment within Sublime Text that automatically formats your script.
 
 For complete instructions, please visit: https://github.com/derickc/Fountainhead and view the README section.
+Help can also be found in the Fountainhead menu: {Tools > Fountainhead > Help}
 
 Restart Sublime Text to complete installation of package.
 
