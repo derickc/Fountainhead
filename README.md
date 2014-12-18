@@ -397,6 +397,8 @@ If you want to change any of Fountainhead's settings, you must do so in your Fou
 
 You can customize Fountainhead's key bindings by copying the desired default key binding and editing it in your user key bindings. Due to how many key bindings Fountainhead uses, changes made to key bindings can have unexpected results.
 
+Key Bindings can be accessed at:
+
 `Tools > Fountainhead > Preferences > Key Bindings - Default`
 `Tools > Fountainhead > Preferences > Key Bindings - User`
 
@@ -419,6 +421,10 @@ You can customize Fountainhead's key bindings by copying the desired default key
 ## <a name="support"></a>Support
 
 Feel free to contact me at: `derick` at `unterrible` dot `com`.
+
+##### [Back to Contents](#contents)
+
+## <a name="license"></a>License
 
 The project is licensed under the MIT license.
 
