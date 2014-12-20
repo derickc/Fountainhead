@@ -1,0 +1,4 @@
+Fountainhead 0.5.1 Changelog:
+
+Fixed
+ - Action text with parentheses no longer auto-capitalizes.
