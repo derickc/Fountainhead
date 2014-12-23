@@ -408,6 +408,9 @@ Key Bindings can be accessed at:
 
 - I have completed my Fountain masterpiece; now what?
     - A good place to look for ways to convert your screenplay to a PDF or a Final Draft document, is the official [Fountain Apps](http://fountain.io/apps) page.
+    - An online solution that appears to convert Fountain files to PDFs well is [Writer Duet](https://writerduet.com/convert). You can also convert Fountain to Final Draft and Celtx.
+- Will Fountainhead ever have the ability to convert Fountain files to Final Draft or PDFs?
+    - I hope to add these features in the future.
 
 ##### [Back to Contents](#contents)
 
