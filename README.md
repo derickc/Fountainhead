@@ -213,9 +213,8 @@ Centered Text | NO | DOUBLE
 Page Breaks | N/A | DOUBLE
 Title Page | NO | SINGLE
 
-###### \* Supports **V.O.** and **O.S.** character elements, which are automatically capitalized.
-
-###### \*\* Character names that begin with `@` will remain as written, but **V.O.** and **O.S.** will be capitalized ( e.g., **@McDOWELL (v.o.) > @McDOWELL (V.O.)** ).
+\* Supports **V.O.** and **O.S.** character elements, which are automatically capitalized.
+\*\* Character names that begin with `@` will remain as written, but **V.O.** and **O.S.** will be capitalized ( e.g., **@McDOWELL (v.o.) > @McDOWELL (V.O.)** ).
 
 ##### [Back to Contents](#contents)
 
