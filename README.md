@@ -194,7 +194,7 @@ Fountainhead believes in efficiency, and that means doing away with superfluous 
 
 Pressing ⏎ at the end of lines will have the following effect\*:
 
-###### \* Pressing ⌘⏎ / ⌃⏎ will produce a normal carriage return.
+\* Pressing ⌘⏎ / ⌃⏎ will produce a normal carriage return.
 
 Element Type | Uppercase | Line Spacing
 -------------|-----------------|-------------
@@ -214,6 +214,7 @@ Page Breaks | N/A | DOUBLE
 Title Page | NO | SINGLE
 
 \* Supports **V.O.** and **O.S.** character elements, which are automatically capitalized.
+
 \*\* Character names that begin with `@` will remain as written, but **V.O.** and **O.S.** will be capitalized ( e.g., **@McDOWELL (v.o.) > @McDOWELL (V.O.)** ).
 
 ##### [Back to Contents](#contents)
@@ -253,9 +254,9 @@ Characters are remembered and can be autocompleted:
 - Press `Tab` to accept the autocompletion.\*\*
     - Pressing `Return` will only produce a newline, and **not** accept the autocompletion.
 
-###### \* This also works for previously entered `@` character names that require lowercase letters.
+\* This also works for previously entered `@` character names that require lowercase letters.
 
-###### \*\* If you don't want any of the suggestions, just write like normal. You can choose to close the window by pressing `Esc`.
+\*\* If you don't want any of the suggestions, just write like normal. You can choose to close the window by pressing `Esc`.
 
 **Sublime Text 3:** ⇧⌃C / ⇧⌘C will bring up a pop-up menu that displays all previously entered characters. Pressing `Enter` or clicking on it will select the character (`Tab` will not select the character).
 
@@ -278,7 +279,7 @@ Scenes are remembered and can be autocompleted:
 - Press `Tab` to accept the autocompletion.\*
     - Pressing `Return` will only produce a newline, and **not** accept the autocompletion.
 
-###### \* If you don't want any of the suggestions, just write like normal. You can close the window by pressing `Esc`.
+\* If you don't want any of the suggestions, just write like normal. You can close the window by pressing `Esc`.
 
 **Sublime Text 3:** ⇧⌃S / ⇧⌘S will bring up a pop-up menu that displays all previously entered scenes. Pressing `Enter` or clicking on it will select the scene (`Tab` will not select the scene).
 
@@ -330,7 +331,7 @@ Shortcut | Equal to
 ⇧`Return` | ↓
 ⌘`Return` / ⌃`Return` | "Normal" `Return`\*
 
-###### \* ⌘`Return` / ⌃`Return` in the middle of a line of text will add a newline below, without breaking up the text on the previous line.
+\* ⌘`Return` / ⌃`Return` in the middle of a line of text will add a newline below, without breaking up the text on the previous line.
 
 ##### [Back to Contents](#contents)
 
@@ -372,7 +373,7 @@ Sublime Text comes with a distraction free mode: `View > Enter Distraction Free 
 
 You can create separate settings by editing: `Sublime Text > Preferences > Settings - More > Distraction Free`\*.
 
-###### \* These changes are reflected no matter the syntax. I have found that a `"wrap_width": 80` setting works well for distraction free coding as well as screenplay writing.
+\* These changes are reflected no matter the syntax. I have found that a `"wrap_width": 80` setting works well for distraction free coding as well as screenplay writing.
 
 ##### [Back to Contents](#contents)
 
@@ -390,7 +391,7 @@ If you want to change any of Fountainhead's settings, you must do so in your Fou
 5. Comment/Uncomment (⌘/ / ⌃/ or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change\*
 6. Save (⌘S / ⌃S)
 
-###### \*Each setting should only have one active value.
+\*Each setting should only have one active value.
 
 ##### [Back to Contents](#contents)
 
