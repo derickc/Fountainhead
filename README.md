@@ -305,7 +305,7 @@ You can remove all `(CONT'D)`s from the script by selecting:
 or
 `Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Remove all Character (CONT'D)s**\*
 
-\*If the `"contd"` Fountainhead setting is not `false`, a `(CONT'D)` will be added to all newly typed characters.
+\* If the `"contd"` Fountainhead setting is not `false`, a `(CONT'D)` will be added to all newly typed characters.
 
 ##### [Back to Contents](#contents)
 
@@ -391,7 +391,7 @@ If you want to change any of Fountainhead's settings, you must do so in your Fou
 5. Comment/Uncomment (⌘/ / ⌃/ or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change\*
 6. Save (⌘S / ⌃S)
 
-\*Each setting should only have one active value.
+\* Each setting should only have one active value.
 
 ##### [Back to Contents](#contents)
 
