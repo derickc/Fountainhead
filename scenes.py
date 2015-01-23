@@ -2,6 +2,7 @@ import sublime
 import sublime_plugin
 import re
 import os
+import codecs
 # import sys
 # import platform
 # from .sublime_helper import *
@@ -66,7 +67,7 @@ class Scenes(sublime_plugin.EventListener):
                                 if not os.path.exists(packages_directory):
                                     os.mkdir(packages_directory)
                                 completions_file = packages_directory + 'Scenes.sublime-completions'
-                                completions = open(completions_file, 'w')
+                                completions = codecs.open(completions_file, 'w', 'utf8')
                                 completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
                                 length = len(self.major_scenes)
                                 scene_counter = 0
@@ -137,7 +138,7 @@ class Scenes(sublime_plugin.EventListener):
                     if not os.path.exists(packages_directory):
                         os.mkdir(packages_directory)
                     completions_file = packages_directory + 'Scenes.sublime-completions'
-                    completions = open(completions_file, 'w')
+                    completions = codecs.open(completions_file, 'w', 'utf8')
                     completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
 
                     length = len(self.major_scenes)
