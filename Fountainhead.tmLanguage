@@ -136,7 +136,7 @@
             <key>name</key>
             <string>string</string>
             <key>begin</key>
-            <string>(^\s*(@.*$|[A-Z0-9ÂÃÄÀÁÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŐØÙÚÛÜŰÝ#]([A-Z0-9ÂÃÄÀÁÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŐØÙÚÛÜŰÝ# :().'\-]*[\!\?]*(\(.*\))*(\s*\^)?$)))</string>
+            <string>(^\s*(@.*$|[A-Z0-9ÂÃÄÀÁÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŐØÙÚÛÜŰÝß#]([A-Z0-9ÂÃÄÀÁÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŐØÙÚÛÜŰÝß# :().'\-]*[\!\?]*(\(.*\))*(\s*\^)?$)))</string>
             <key>end</key>
             <string>^$</string>
             <key>beginCaptures</key>
@@ -218,7 +218,7 @@
         <key>scene_headings</key>
         <dict>
             <key>match</key>
-            <string>^\s*(?i)((\.[A-Za-z0-9ÂÃÄÀÁÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŐØÙÚÛÜŰÝÞßàáâãäåæçèéêëìíîïðñòóôõöőøùúûüűýþÿ_]|int\.? |ext\.? |est\.? |int\.?/ext\.? |i/e|flashback)(?:|\.| )(.*?)(?&lt;!  )(#[A-Za-z0-9ÂÃÄÀÁÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŐØÙÚÛÜŰÝÞßàáâãäåæçèéêëìíîïðñòóôõöőøùúûüűýþÿ\-._]+#)? *$)</string>
+            <string>^\s*(?i)((\.[a-z0-9ßàáâãäåæçèéêëìíîïðñòóôõöőøùúûüűýþÿ_]|int\.? |ext\.? |est\.? |int\.?/ext\.? |i/e|flashback)(?:|\.| )(.*?)(?&lt;!  )(#[a-z0-9ßàáâãäåæçèéêëìíîïðñòóôõöőøùúûüűýþÿ\-._]+#)? *$)</string>
             <key>captures</key>
             <dict>
                 <key>1</key>
@@ -233,7 +233,7 @@
         <key>character_list</key>
         <dict>
             <key>begin</key>
-            <string>^([ \t]*)[a-zàáâãäåæçèéêëìíîïðñòóôõöőøùúûüűýþÿ.]$</string>
+            <string>^([ \t]*)[a-zàáâãäåæçèéêëìíîïðñòóôõöőøùúûüűýþÿß.]$</string>
             <key>contentName</key>
             <string>constant.character</string>
             <key>end</key>

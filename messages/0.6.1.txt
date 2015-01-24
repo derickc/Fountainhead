@@ -1,0 +1,7 @@
+Fountainhead 0.6.1 Changelog:
+
+Fixed
+ - Add missing ő and ű (Thanks to fricy for finding the issue).
+ - Cleaned up Fountainhead.tmLanguage scene_headings scope to remove redundant capital letters (since the ?i regex makes it case insensitive).
+ 
+Restart Sublime Text for the updates to be properly applied.
