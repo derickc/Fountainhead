@@ -207,7 +207,7 @@ or
 or
 [[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Show/Hide Notes}
 
-Within [user settings](#settings), there is the ability to hide boneyard, synopses, and notes by default.
+Within  user settings (see the Settings section below), there is the ability to hide boneyard, synopses, and notes by default.
 
 ## Text Emphasis
 
@@ -236,6 +236,33 @@ If you want to change any of Fountainhead's settings, you must do so in your Fou
 6. Save (⌘S / ⌃S)
 
 (1) *Each setting should only have one active value.*
+
+## Installing Fonts
+
+The steps below will install fonts onto your system, allowing them to be used in all programs, including Sublime Text.
+
+### Mac
+
+1. Double-click the font file (usually ending in .otf or .ttf)
+2. The Font Book app will open and display the font
+3. Click [[Install Font]] on the bottom of the preview window
+
+### Windows
+
+Taken from http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall-fonts
+
+1. Open Fonts by clicking the [[Start]] button, clicking [[Control Panel]], clicking [[Appearance and Personalization]], and then clicking [[Fonts]].
+2. Click [[File]], and then click [[Install New Font]].
+    - If you don't see the File menu, press {ALT}.
+3. In the "Add Fonts" dialog box, under "Drives", click the drive where the font that you want to install is located.
+4. Under "Folders", double-click the folder containing the fonts that you want to add.
+5. Under "List of fonts", click the font that you want to add, and then click [[Install]].
+
+### Linux (Ubuntu)
+
+1. Double-click the font file (usually ending in .otf or .ttf)
+2. Font Viewer will launch and display the font
+3. Click [[Install Font]] in the lower right-hand corner of the preview window
 
 # Key Bindings
 
