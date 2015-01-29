@@ -21,6 +21,8 @@
     // "font_face": "Courier Prime",
     // "font_face": "Iconsolata",
     // "font_face": "Inconsolata-dz",
+    // Download and learn more about the free Dyslexia Typeface at http://opendyslexic.org
+    // "font_face": "OpenDyslexicMono",
     "font_size": 16,
 
     // Uncomment a desired color_scheme that will only be used when working on .fountain files. Program restart or reopening document may be required for changes to take effect.

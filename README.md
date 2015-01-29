@@ -10,14 +10,20 @@ Help documentation can also be found within Sublime Text at: `Tools > Fountainhe
 
 *Note: Even though Sublime Text 3 is in beta, it is extremely stable and is better than 2 in almost every way.*
 
+## Support for OpenDyslexic Typeface
+
+Fountainhead supports the open source dyslexia typeface, OpenDyslexic. The OpenDyslexic monospaced (and proportional) font can be downloaded here: [http://opendyslexic.org](http://opendyslexic.org)
+
+Instructions on how to install fonts are located in [Settings](#installing-fonts).
+
 ## <a name="contents"></a>Contents
 
 1. [Why Fountain?](#why-fountain)
-- [Installation](#installation)
-- [Quickstart](#quickstart)
-- [Symbol Dictionary](#symbol-dictionary)
-- [Fountain Syntax](#fountain-syntax)
-- [Features](#features)
+1. [Installation](#installation)
+1. [Quickstart](#quickstart)
+1. [Symbol Dictionary](#symbol-dictionary)
+1. [Fountain Syntax](#fountain-syntax)
+1. [Features](#features)
     - [Automatic Capitalization and Line Spacing](#auto-cap)
     - [Automatic Escaping of Parentheses, Boneyard, and Notes](#auto-escape)
     - [Color Schemes](#color-schemes)
@@ -32,6 +38,7 @@ Help documentation can also be found within Sublime Text at: `Tools > Fountainhe
     - [Text Emphasis](#text-emphasis)
     - [Distraction Free Mode](#distraction-free-mode)
 - [Settings](#settings)
+    - [Installing Fonts](#installing-fonts)
 - [Key Bindings](#key-bindings)
 - [FAQ](#faq)
 - [Contribute](#contribute)
@@ -388,10 +395,39 @@ If you want to change any of Fountainhead's settings, you must do so in your Fou
 2. Select all of the text: `Selection > Select All` (⌘A / ⌃A)
 3. Open `Tools > Fountainhead > Preferences > Fountain Settings - User`
 4. Paste the copied text: `Edit > Paste` (⌘V / ⌃V)
-5. Comment/Uncomment (⌘/ / ⌃/ or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change\*
+5. Comment/Uncomment (`⌘/` / `⌃/` or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change\*
 6. Save (⌘S / ⌃S)
 
 \* Each setting should only have one active value.
+
+##### [Back to Contents](#contents)
+
+### <a name="installing-fonts"></a>Installing Fonts
+
+The steps below will install fonts onto your system, allowing them to be used in all programs, including Sublime Text.
+
+#### Mac
+
+1. Double-click the font file (usually ending in `.otf` or `.ttf`)
+2. The **Font Book** app will open and display the font
+3. Click `Install Font` on the bottom of the preview window
+
+#### Windows
+
+*Taken from [Microsoft](http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall-fonts).*
+
+1. Open Fonts by clicking the `Start` button, clicking `Control Panel`, clicking `Appearance and Personalization`, and then clicking `Fonts`.
+2. Click `File`, and then click `Install New Font`.
+    - If you don't see the **File** menu, press `ALT`.
+3. In the **Add Fonts** dialog box, under **Drives**, click the drive where the font that you want to install is located.
+4. Under **Folders**, double-click the folder containing the fonts that you want to add.
+5. Under **List of fonts**, click the font that you want to add, and then click `Install`.
+
+#### Linux (Ubuntu)
+
+1. Double-click the font file (usually ending in `.otf` or `.ttf`)
+2. **Font Viewer** will launch and display the font
+3. Click `Install Font` in the lower right-hand corner of the preview window
 
 ##### [Back to Contents](#contents)
 
