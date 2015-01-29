@@ -10,7 +10,7 @@ Help documentation can also be found within Sublime Text at: `Tools > Fountainhe
 
 *Note: Even though Sublime Text 3 is in beta, it is extremely stable and is better than 2 in almost every way.*
 
-## Support for OpenDyslexic Typeface
+## <a name="opendyslexic"></a>Support for OpenDyslexic Typeface
 
 Fountainhead supports the open source dyslexia typeface, OpenDyslexic. The OpenDyslexic monospaced (and proportional) font can be downloaded here: [http://opendyslexic.org](http://opendyslexic.org)
 
