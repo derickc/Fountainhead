@@ -19,8 +19,8 @@ class Characters(sublime_plugin.EventListener):
 
     characters = []
     person = ''
-    lower_characters = []
-    camel_characters = []
+    # lower_characters = []
+    # camel_characters = []
     current_character = ''
     previous_line = 0
     current_line = 0
@@ -51,6 +51,7 @@ class Characters(sublime_plugin.EventListener):
                             name = re.split(r'^\s*', name)[1]
                         if name not in self.characters:
                             self.characters.append(name)
+                            self.characters = sorted(self.characters)
                             # Create Fountainhead directory if it doesn't exist
                             packages_directory = sublime.packages_path() + '/User/Fountainhead/'
                             if not os.path.exists(packages_directory):
@@ -59,50 +60,54 @@ class Characters(sublime_plugin.EventListener):
                             # if user_os == 'Windows':
                                 # print("Sorry, not supported at this time.")
                             # elif user_os == 'Darwin':
-                            if name[0] != '@':
-                                if name.lower() not in self.lower_characters:
-                                    self.lower_characters.append(name.lower())
-                                    self.lower_characters = sorted(self.lower_characters)
-                                    # proc_env = os.environ.copy()
-                                    # encoding = sys.getfilesystemencoding()
-                                    # for k, v in proc_env.items():
-                                        # proc_env[k] = os.path.expandvars(v).encode(encoding)
-                                    # user = (proc_env['HOME']).decode(encoding='UTF-8')
-                                    # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
-                                    completions = codecs.open(completions_file, 'w', 'utf8')
-                                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
-                                    length = len(self.lower_characters)
-                                    character_counter = 0
-                                    for character in self.lower_characters:
-                                        if character_counter < length - 1:
-                                            completions.write('"%s",' % character)
-                                            character_counter += 1
-                                        else:
-                                            completions.write('"%s"' % character)
-                                    completions.write(']\n}')
-                                    completions.close()
-                            elif name[0] == '@':
-                                if name not in self.lower_characters:
-                                    self.lower_characters.append(name)
-                                    self.lower_characters = sorted(self.lower_characters)
-                                    # proc_env = os.environ.copy()
-                                    # encoding = sys.getfilesystemencoding()
-                                    # for k, v in proc_env.items():
-                                    #     proc_env[k] = os.path.expandvars(v).encode(encoding)
-                                    # user = (proc_env['HOME']).decode(encoding='UTF-8')
-                                    # completions = open(user + '/Library/Application Support/Sublime Text 3/Packages/Fountainhead/Characters.sublime-completions', 'w')
-                                    completions = codecs.open(completions_file, 'w', 'utf8')
-                                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
-                                    length = len(self.lower_characters)
-                                    character_counter = 0
-                                    for character in self.lower_characters:
-                                        if character_counter < length - 1:
-                                            completions.write('"%s",' % character)
-                                            character_counter += 1
-                                        else:
-                                            completions.write('"%s"' % character)
-                                    completions.write(']\n}')
-                                    completions.close()
+
+                            completions = codecs.open(completions_file, 'w', 'utf8')
+                            completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                            length = len(self.characters)
+                            character_counter = 0
+                            for character in self.characters:
+                                if character_counter < length - 1:
+                                    completions.write('"%s",' % character)
+                                    character_counter += 1
+                                else:
+                                    completions.write('"%s"' % character)
+                            completions.write(']\n}')
+                            completions.close()
+
+                            # Not needed since no characters are converted to lowercase
+                            # if name[0] != '@':
+                            #     if name.lower() not in self.lower_characters:
+                            #         self.lower_characters.append(name.lower())
+                            #         self.lower_characters = sorted(self.lower_characters)
+                            #         completions = codecs.open(completions_file, 'w', 'utf8')
+                            #         completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                            #         length = len(self.lower_characters)
+                            #         character_counter = 0
+                            #         for character in self.lower_characters:
+                            #             if character_counter < length - 1:
+                            #                 completions.write('"%s",' % character)
+                            #                 character_counter += 1
+                            #             else:
+                            #                 completions.write('"%s"' % character)
+                            #         completions.write(']\n}')
+                            #         completions.close()
+                            # elif name[0] == '@':
+                            #     if name not in self.lower_characters:
+                            #         self.lower_characters.append(name)
+                            #         self.lower_characters = sorted(self.lower_characters)
+                            #         completions = codecs.open(completions_file, 'w', 'utf8')
+                            #         completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                            #         length = len(self.lower_characters)
+                            #         character_counter = 0
+                            #         for character in self.lower_characters:
+                            #             if character_counter < length - 1:
+                            #                 completions.write('"%s",' % character)
+                            #                 character_counter += 1
+                            #             else:
+                            #                 completions.write('"%s"' % character)
+                            #         completions.write(']\n}')
+                            #         completions.close()
+
                             # Clear out character list message
                             view.set_status('CharacterList',
                                             '')
@@ -130,7 +135,7 @@ class Characters(sublime_plugin.EventListener):
                     view.set_status('CharacterList',
                                     'FINDING CHARACTERS...')
                     self.characters = []
-                    self.lower_characters = []
+                    # self.lower_characters = []
                     counter = 0
                     self.filename = view.file_name()
                     try:
@@ -149,15 +154,15 @@ class Characters(sublime_plugin.EventListener):
                             counter += 1
                     except IndexError:
                         pass
-                    # if user_os == 'Windows':
-                    #     print("Sorry, not supported at this time.")
-                    # elif user_os == 'Darwin':
-                    for character in self.characters:
-                        if character[0] != '@':
-                            self.lower_characters.append(character.lower())
-                        if character[0] == '@':
-                            self.lower_characters.append(character)
-                    self.lower_characters = sorted(self.lower_characters)
+
+                    # for character in self.characters:
+                    #     if character[0] != '@':
+                    #         self.lower_characters.append(character.lower())
+                    #     if character[0] == '@':
+                    #         self.lower_characters.append(character)
+                    # self.lower_characters = sorted(self.lower_characters)
+
+                    self.characters = sorted(self.characters)
                     # proc_env = os.environ.copy()
                     # encoding = sys.getfilesystemencoding()
                     # for k, v in proc_env.items():
@@ -173,9 +178,11 @@ class Characters(sublime_plugin.EventListener):
                     completions_file = packages_directory + 'Characters.sublime-completions'
                     completions = codecs.open(completions_file, 'w', 'utf8')
                     completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.function - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
-                    length = len(self.lower_characters)
+                    # length = len(self.lower_characters)
+                    length = len(self.characters)
                     character_counter = 0
-                    for character in self.lower_characters:
+                    # for character in self.lower_characters:
+                    for character in self.characters:
                         if character_counter < length - 1:
                             completions.write('"%s",' % character)
                             character_counter += 1
@@ -187,7 +194,8 @@ class Characters(sublime_plugin.EventListener):
                     view.set_status('CharacterList',
                                     'CHARACTERS FOUND!')
 
-                    ShowCharactersCommand.unsorted_characters = self.characters
+                    # ShowCharactersCommand.unsorted_characters = self.characters
+                    ShowCharactersCommand.characters = self.characters
 
 
 class UpdateCharacterListCommand(sublime_plugin.TextCommand):
@@ -204,14 +212,16 @@ class UpdateCharacterListCommand(sublime_plugin.TextCommand):
 class ShowCharactersCommand(sublime_plugin.TextCommand):
 
     person = ''
-    unsorted_characters = []
-    sorted_characters = []
+    # unsorted_characters = []
+    # sorted_characters = []
+    characters = []
 
     def run(self, edit):
         # if sublime.load_settings('Fountainhead.sublime-settings').get('characters', True) and int(sublime.version()) >= 3000:
         if self.view.settings().get('characters', True) and int(sublime.version()) >= 3000:
-            self.sorted_characters = sorted(self.unsorted_characters)
-            self.view.show_popup_menu(self.sorted_characters, self.on_done)
+            # self.sorted_characters = sorted(self.unsorted_characters)
+            # self.view.show_popup_menu(self.sorted_characters, self.on_done)
+            self.view.show_popup_menu(self.characters, self.on_done)
 
             self.view.run_command('insert', {"characters": self.person})
 
@@ -219,4 +229,5 @@ class ShowCharactersCommand(sublime_plugin.TextCommand):
         if index == -1:
             self.person = ''
         else:
-            self.person = self.sorted_characters[index]
+            # self.person = self.sorted_characters[index]
+            self.person = self.characters[index]
