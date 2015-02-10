@@ -9,7 +9,7 @@ An updated, more readable version of this document can be found in the README se
 2. Verify that "Fountainhead" appears in the bottom right-hand corner.
     - If it doesn't, you can click on the offending syntax and change it to {Fountainhead}, or you can use the menu: [[View > Syntax > Open all with current extension as > Fountainhead]].
 3. Wait for the {CHARACTERS FOUND!} and {SCENES FOUND!} text to appear in the bottom left-hand corner, letting you know that everything has loaded properly.
-    - *The text will not appear if you have disabled the Character and Scene Lists options in Fountainhead settings.*
+    - The text will not appear if you have disabled the Character and Scene Lists options in Fountainhead settings.
 4. Write!
     - Only action and dialogue sentences need to begin with uppercase letters. Starting everything else with lowercase letters will allow character and scene heading autocompletion suggestions to appear.
         - The {Space} key will cause the autocomplete window to close, so write without spaces to keep the window open.
@@ -52,7 +52,7 @@ Fountainhead commands can be found by selecting:
 
 [[Tools > Fountainhead]]
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead}
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead"
 
 *All settings can be deactivated and customized by the user, as described in the Settings section.*
 
@@ -82,7 +82,31 @@ Page Breaks      | N/A       | DOUBLE
 Title Page       | NO        | SINGLE
 
 (1) Supports {V.O.} and {O.S.} character elements, which are automatically capitalized.
-(2) Character names that begin with @ will remain as written, but {V.O.} and {O.S.} will be capitalized. (e.g., @McDOWELL (v.o.) > @McDOWELL (V.O.))
+(2) Character names that begin with @ will remain as written, but {V.O.} and {O.S.} will be capitalized. (e.g., @MCDOWELL (V.O.) > @MCDOWELL (V.O.))
+
+## Manual Capitalization
+
+For those times that manual capitalization is needed (e.g., edits), the following commands are provided:
+
+Key Combination     | Performs the Following Action
+--------------------|-------------------------------
+⌘K,⌘L / ⌃K,⌃L (1) | Convert highlighted text to lowercase
+⌘K,⌘U / ⌃K,⌃U (1) | Convert highlighted text to uppercase
+⌘K,K / ⌃K,K (2)    | Capitalize the entire line
+
+(1) The comma is used to separate the sequence of key presses (X,Y is equal to "Press X, and then press Y").
+
+(2) All commands use lowercase letters (e.g., K is equal to pressing k), unless preceded by ⇧/Shift.
+
+The above commands can also be selected through the use of menus:
+
+[[Tools > Fountainhead > Convert to Lowercase]]
+[[Tools > Fountainhead > Convert to Uppercase]]
+[[Tools > Fountainhead > Capitalize Current Line]]
+or
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Convert to Lowercase"
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Convert to Uppercase"
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Capitalize Current Line"
 
 ## Automatic Escaping of Parentheses, Boneyard, and Notes
 
@@ -124,7 +148,7 @@ If the character list gets out of sync, you can recreate it by selecting:
 
 [[Tools > Fountainhead > Update Character List]]
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Update Character List}
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Update Character List"
 
 ## Scene List
 
@@ -137,7 +161,7 @@ Scenes are remembered and can be autocompleted:
 4. Press {Tab} to accept the autocompletion. (1)
     - Pressing {Return} will only produce a newline, and {not} accept the autocompletion.
 
-(1) *If you don't want any of the suggestions, just write like normal. You can close the window by pressing {Esc}.*
+(1) If you don't want any of the suggestions, just write like normal. You can close the window by pressing {Esc}.
 
 *Sublime Text 3: ⇧⌃S / ⇧⌘S will bring up a pop-up menu that displays all previously entered scenes. Pressing {Enter} or clicking on it will select the scene ({Tab} will not select the scene).*
 
@@ -145,7 +169,7 @@ If the scene list gets out of sync, you can recreate it by selecting:
 
 [[Tools > Fountainhead > Update Scene List]]
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Update Scene List}
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Update Scene List"
 
 ## (CONT'D)
 
@@ -153,15 +177,15 @@ By default, {(CONT'D)}s are added to new characters. If you are loading a screen
 
 [[Tools > Fountainhead > Update Character (CONT'D)s]]
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Update Character (CONT'D)s}
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Update Character (CONT'D)s"
 
 You can remove all {(CONT'D)}s from the script by selecting:
 
 [[Tools > Fountainhead > Remove all Character (CONT'D)s]]
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Remove all Character (CONT'D)s} (1)
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Remove all Character (CONT'D)s" (1)
 
-(1) *If the {"contd"} Fountainhead setting is not {false}, a {(CONT'D)} will be added to all newly typed characters.*
+(1) If the {"contd"} Fountainhead setting is not {false}, a {(CONT'D)} will be added to all newly typed characters.
 
 ## Auto-Save
 
@@ -181,7 +205,7 @@ Shortcut              | Equal to
 ⇧{Return}             | ↓
 ⌘{Return} / ⌃{Return} | "Normal" {Return} (1)
 
-(1) *⌘{Return} / ⌃{Return} in the middle of a line of text will add a newline below, without breaking up the text on the previous line.* 
+(1) ⌘{Return} / ⌃{Return} in the middle of a line of text will add a newline below, without breaking up the text on the previous line.
 
 ## Quick Navigation to Scenes and Sections
 
@@ -193,15 +217,15 @@ Boneyard, Synopses, and Notes can be quickly hidden or revealed by selecting:
 
 [[Tools > Fountainhead > Boneyard: Show/Hide]] ( ⌘K then ⌘/ / ⌃K then ⌃/ )
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Show/Hide Boneyard}
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Show/Hide Boneyard"
 
 [[Tools > Fountainhead > Synopses: Show/Hide]] ( ⌘K then ⌘= / ⌃K then ⌃= )
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Show/Hide Synopses}
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Show/Hide Synopses"
 
 [[Tools > Fountainhead > Notes: Show/Hide]] ( ⌘K then ⌘[ / ⌃K then ⌃[ )
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering {Fountainhead: Show/Hide Notes}
+[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Show/Hide Notes"
 
 Within  user settings (see the Settings section below), there is the ability to hide boneyard, synopses, and notes by default.
 
@@ -215,7 +239,7 @@ Sublime Text comes with a distraction free mode: {View > Enter Distraction Free 
 
 You can create separate settings by editing: [[Sublime Text > Preferences > Settings - More > Distraction Free]]. (1)
 
-(1) *These changes are reflected no matter the syntax.*
+(1) These changes are reflected no matter the syntax.
 
 # Settings
 
@@ -231,7 +255,7 @@ If you want to change any of Fountainhead's settings, you must do so in your Fou
 5. Comment/Uncomment (⌘/ / ⌃/ or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change (1)
 6. Save (⌘S / ⌃S)
 
-(1) *Each setting should only have one active value.*
+(1) Each setting should only have one active value.
 
 ## Installing Fonts
 

@@ -33,11 +33,11 @@
                     { "caption": "-" },
                     {
                         "command": "lower_case",
-                        "caption": "Convert to Lower Case"
+                        "caption": "Convert to Lowercase"
                     },
                     {
                         "command": "upper_case",
-                        "caption": "Convert to Upper Case"
+                        "caption": "Convert to Uppercase"
                     },
                     {
                         "command": "cap_current_line",

@@ -36,6 +36,14 @@
         "command": "remove_all_contd"
     },
     {
+        "caption": "Fountainhead: Convert to Lowercase",
+        "command": "upper_case"
+    },
+    {
+        "caption": "Fountainhead: Convert to Uppercase",
+        "command": "lower_case"
+    },
+    {
         "caption": "Fountainhead: Capitalize Current Line",
         "command": "cap_current_line"
     }

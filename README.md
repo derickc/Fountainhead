@@ -25,6 +25,7 @@ Instructions on how to install fonts are located in [Settings](#installing-fonts
 1. [Fountain Syntax](#fountain-syntax)
 1. [Features](#features)
     - [Automatic Capitalization and Line Spacing](#auto-cap)
+    - [Manual Capitalization](#manual-cap)
     - [Automatic Escaping of Parentheses, Boneyard, and Notes](#auto-escape)
     - [Color Schemes](#color-schemes)
     - [Character List](#character-list)
@@ -37,13 +38,13 @@ Instructions on how to install fonts are located in [Settings](#installing-fonts
     - [Show/Hide Boneyard, Synopses, and Notes](#show-hide)
     - [Text Emphasis](#text-emphasis)
     - [Distraction Free Mode](#distraction-free-mode)
-- [Settings](#settings)
+1. [Settings](#settings)
     - [Installing Fonts](#installing-fonts)
-- [Key Bindings](#key-bindings)
-- [FAQ](#faq)
-- [Contribute](#contribute)
-- [Support](#support)
-- [License](#license)
+1. [Key Bindings](#key-bindings)
+1. [FAQ](#faq)
+1. [Contribute](#contribute)
+1. [Support](#support)
+1. [License](#license)
 
 <h2 id="why-fountain">Why Fountain?</h2>
 
@@ -223,6 +224,32 @@ Title Page | NO | SINGLE
 \* Supports **V.O.** and **O.S.** character elements, which are automatically capitalized.
 
 \*\* Character names that begin with `@` will remain as written, but **V.O.** and **O.S.** will be capitalized ( e.g., **@McDOWELL (v.o.) > @McDOWELL (V.O.)** ).
+
+##### [Back to Contents](#contents)
+
+<h3 id="manual-cap">Manual Capitalization</h3>
+
+For those times that manual capitalization is needed (e.g., edits), the following commands are provided:
+
+Key Combination | Performs the Following Action
+----------------|------------------------------
+`⌘K`, `⌘L` / `⌃K`, `⌃L`\* | Convert highlighted text to lowercase
+`⌘K`, `⌘U` / `⌃K`, `⌃U`\* | Convert highlighted text to uppercase
+`⌘K`, `K` / `⌃K`, `K`\*\* | Capitalize the entire line
+
+\* The comma is used to separate the sequence of key presses (`X`,`Y` is equal to "Press **X**, and then press **Y**").
+
+\*\* All commands use lowercase letters (`K` is equal to pressing **k**), unless preceded by ⇧/`Shift`.
+
+The above commands can also be selected through the use of menus:
+
+`Tools > Fountainhead > Convert to Lowercase`
+`Tools > Fountainhead > Convert to Uppercase`
+`Tools > Fountainhead > Capitalize Current Line`
+or
+`Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Convert to Lowercase**
+`Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Convert to Uppercase**
+`Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Capitalize Current Line**
 
 ##### [Back to Contents](#contents)
 
