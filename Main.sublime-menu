@@ -39,6 +39,10 @@
                         "command": "upper_case",
                         "caption": "Convert to Upper Case"
                     },
+                    {
+                        "command": "cap_current_line",
+                        "caption": "Capitalize Current Line"
+                    },
                     { "caption": "-" },
                     {
                         "command": "show_overlay", 

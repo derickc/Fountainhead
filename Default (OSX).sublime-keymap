@@ -73,8 +73,7 @@
     ]   },
 
     // Capitalize current line (while remaining on that line)
-    { "keys": ["super+k", "k"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/CapCurrentLine.sublime-macro"}, 
+    { "keys": ["super+k", "k"], "command": "cap_current_line", 
     "context":
     [
         { "key": "auto_complete_visible", "operator": "equal", "operand": false },
