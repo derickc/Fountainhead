@@ -21,6 +21,9 @@
     // "font_face": "Courier Prime",
     // "font_face": "Iconsolata",
     // "font_face": "Inconsolata-dz",
+    // Download and learn more about Input, fonts for code, from Font Bureau at http://input.fontbureau.com
+    // If you are trying to use Input's proportional typefaces, please read http://input.fontbureau.com/workarounds/
+    // "font_face": "InputMono ExLight",
     // Download and learn more about the free Dyslexia Typeface at http://opendyslexic.org
     // "font_face": "OpenDyslexicMono",
     "font_size": 16,
