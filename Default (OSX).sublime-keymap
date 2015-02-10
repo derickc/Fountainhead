@@ -72,6 +72,15 @@
         { "key": "setting.fold_text", "operator": "equal", "operand": true}
     ]   },
 
+    // Capitalize current line (while remaining on that line)
+    { "keys": ["super+k", "k"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/CapCurrentLine.sublime-macro"}, 
+    "context":
+    [
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+        { "key": "setting.cap_current_line", "operator": "equal", "operand": true}
+    ]   },
 
     // Capitalize character names and minor scene headings; doesn't capitalize notes, comments, and title page.
     { "keys": ["enter"], "command": "run_macro_file", "args": {

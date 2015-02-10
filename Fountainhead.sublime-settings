@@ -101,6 +101,8 @@
     "forward_cursor": true,
     // Toggle boneyard, synopses, and notes folding keyboard shortcuts
     "fold_text": true,
+    // Toggle capitalizing of current line
+    "cap_current_line": true,
     // Automatically capitalize scene headings, transitions, and character names when pressing Return
     "line_cap": true,
     // Automatically places a blank line after scene headings, action, transitions, and dialogue
