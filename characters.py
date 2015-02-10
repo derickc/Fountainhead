@@ -52,6 +52,7 @@ class Characters(sublime_plugin.EventListener):
                         if name not in self.characters:
                             self.characters.append(name)
                             self.characters = sorted(self.characters)
+                            ShowCharactersCommand.characters = self.characters
                             # Create Fountainhead directory if it doesn't exist
                             packages_directory = sublime.packages_path() + '/User/Fountainhead/'
                             if not os.path.exists(packages_directory):
@@ -74,7 +75,7 @@ class Characters(sublime_plugin.EventListener):
                             completions.write(']\n}')
                             completions.close()
 
-                            # Not needed since no characters are converted to lowercase
+                            # Not needed since characters are no longer converted to lowercase
                             # if name[0] != '@':
                             #     if name.lower() not in self.lower_characters:
                             #         self.lower_characters.append(name.lower())

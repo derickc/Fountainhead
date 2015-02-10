@@ -49,6 +49,7 @@ class Scenes(sublime_plugin.EventListener):
                         if scene not in self.scene_headings:
                             self.scene_headings.append(scene)
                             self.scene_headings = sorted(self.scene_headings)
+                            ShowScenesCommand.scenes = self.scene_headings
 
                             packages_directory = sublime.packages_path() + '/User/Fountainhead/'
                             if not os.path.exists(packages_directory):
