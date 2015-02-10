@@ -37,11 +37,11 @@
     },
     {
         "caption": "Fountainhead: Convert to Lowercase",
-        "command": "upper_case"
+        "command": "lower_case"
     },
     {
         "caption": "Fountainhead: Convert to Uppercase",
-        "command": "lower_case"
+        "command": "upper_case"
     },
     {
         "caption": "Fountainhead: Capitalize Current Line",
