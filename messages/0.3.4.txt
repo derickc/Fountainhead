@@ -1,4 +1,0 @@
-Fountainhead 0.3.4 Changelog:
-
-Fixed
- - File settings are retrieved using view.settings().get() as opposed to sublime.load_settings().get()

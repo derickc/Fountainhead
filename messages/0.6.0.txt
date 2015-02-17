@@ -1,6 +1,0 @@
-Fountainhead 0.6.0 Changelog:
-
-Added
- - Now supports accented characters.
- 
-Restart Sublime Text for the updates to be properly applied.

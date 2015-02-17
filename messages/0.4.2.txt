@@ -1,4 +1,0 @@
-Fountainhead 0.4.2 Changelog:
-
-Fixed
- - Action and Dialogue spacing and no longer auto-capitalizes.
