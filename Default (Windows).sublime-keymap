@@ -91,25 +91,69 @@
         { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
         { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
         { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
-        { "key": "selector", "operator": "not_equal", "operand": "string", "match_all": true },
+        { "key": "selector", "operator": "not_equal", "operand": "dialogue", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
 
 
     // Automatically insert blank lines where appropriate
 
-    // SINGLE LINE is returned instead
-    // Insert a blank line after a Dialogue and Action.
+    // Insert a blank line after Action.
     { "keys": ["enter"], "command": "run_macro_file", "args": {
     "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
     "context":
         [
             { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
-            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]|!|.|?|_|;|,|:|/|*|\"|-][ ]*[\t]*$"},
+            { "key": "selector", "operator": "not_equal", "operand": "dialogue", "match_all": true },
+            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]|!|.|?|_|;|,|:|/|*|\"|-][ \t]*$"},
             { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
             { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
             { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
             { "key": "setting.auto_line", "operator": "equal", "operand": true}
+        ]
+    },
+
+    // Insert a single blank line after Dialogue that is not a complete sentence
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
+    "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "dialogue", "match_all": true },
+            { "key": "preceding_text", "operator": "text", "operator": "equal", "operand": "string", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
+            { "key": "setting.auto_line", "operator": "equal", "operand": true}
+        ]
+    },
+
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/SingleReturn.sublime-macro"},
+    "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "dialogue", "match_all": true },
+            { "key": "preceding_text", "operator": "text", "operator": "equal", "operand": "dialogue", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
+            { "key": "setting.auto_line", "operator": "equal", "operand": true}
+        ]
+    },
+
+    // Insert a blank line after Dialogue.
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/DoubleReturn.sublime-macro"},
+    "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "dialogue", "match_all": true },
+            { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[!|.|?|_|*|\"|-][ \t]*$"},
+            { "key": "selector", "operator": "not_equal", "operand": "variable.parameter", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "comment", "match_all": true },
+            { "key": "selector", "operator": "not_equal", "operand": "constant.numeric", "match_all": true },
+            { "key": "setting.dialogue_double_line_space", "operator": "equal", "operand": true}
         ]
     },
 
@@ -298,7 +342,7 @@
     [
         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[)]$", "match_all": true },
         { "key": "auto_complete_visible", "operator": "equal", "operand": false },
-        { "key": "selector", "operator": "equal", "operand": "entity.other.inherited-class", "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "dialogue", "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
