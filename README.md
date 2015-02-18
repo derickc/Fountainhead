@@ -10,47 +10,17 @@ Help documentation can also be found within Sublime Text at: `Tools > Fountainhe
 
 *Note: Even though Sublime Text 3 is in beta, it is extremely stable and is better than 2 in almost every way.*
 
-<h2 id="opendyslexic">Support for OpenDyslexic Typeface</h2>
+## Support for OpenDyslexic Typeface
 
 Fountainhead supports the open source dyslexia typeface, OpenDyslexic. The OpenDyslexic monospaced (and proportional) font can be downloaded here: [http://opendyslexic.org](http://opendyslexic.org)
 
-Instructions on how to install fonts are located in [Settings](#installing-fonts).
+Instructions on how to install fonts are located in **Settings - Installing Fonts**.
 
-<h2 id="contents">Contents</h2>
-
-1. [Why Fountain?](#why-fountain)
-1. [Installation](#installation)
-1. [Quickstart](#quickstart)
-1. [Symbol Dictionary](#symbol-dictionary)
-1. [Fountain Syntax](#fountain-syntax)
-1. [Features](#features)
-    - [Automatic Capitalization and Line Spacing](#auto-cap)
-    - [Manual Capitalization](#manual-cap)
-    - [Automatic Escaping of Parentheses, Boneyard, and Notes](#auto-escape)
-    - [Color Schemes](#color-schemes)
-    - [Character List](#character-list)
-    - [Scene List](#scene-list)
-    - [(CONT'D)](#contd)
-    - [Auto-Save](#auto-save)
-    - [Automatic Page Scrolling](#page-scroll)
-    - [Cursor Movement Shortcuts](#cursor-movement)
-    - [Quick Navigation to Scenes and Sections](#goto-scene-section)
-    - [Show/Hide Boneyard, Synopses, and Notes](#show-hide)
-    - [Text Emphasis](#text-emphasis)
-    - [Distraction Free Mode](#distraction-free-mode)
-1. [Settings](#settings)
-    - [Installing Fonts](#installing-fonts)
-1. [Key Bindings](#key-bindings)
-1. [FAQ](#faq)
-1. [Contribute](#contribute)
-1. [Support](#support)
-1. [License](#license)
-
-<h2 id="why-fountain">Why Fountain?</h2>
+## Why Fountain?
 
 John August gives a great explanation on [the benefits of writing in Fountain.](http://johnaugust.com/2013/why-i-like-writing-in-fountain)
 
-<h2 id="installation">Installation</h2>
+## Installation
 
 ### Option A: Package Control
 1. Download and install [Sublime Text](http://www.sublimetext.com).
@@ -66,9 +36,7 @@ John August gives a great explanation on [the benefits of writing in Fountain.](
     - Place the **Fountainhead** folder inside the open **Packages** directory.
 - Relaunch **Sublime Text**.
 
-##### [Back to Contents](#contents)
-
-<h2 id="quickstart">Quickstart</h2>
+## Quickstart
 
 1. Open or create a new `.fountain` file.
     - If creating a new file, first save the file with a `.fountain` filename extension.
@@ -84,15 +52,12 @@ John August gives a great explanation on [the benefits of writing in Fountain.](
         - `Command`+`Return`(`Control`+`Return`) will produce a normal carriage return.
         - Starting a character name with `@` will keep it as it's written. Typing an already entered `@` character name in lowercase will cause the autocomplete window to appear, which will enter the name in the correct format.
     - Fountainhead commands can be found in the `Tools > Fountainhead` menu.
-    - Instructions to change settings are in: `Tools > Fountainhead > Preferences > Fountainhead Settings - Default`, and can also be found in the [Settings](#settings) section of this document.
+    - Instructions to change settings are in: `Tools > Fountainhead > Preferences > Fountainhead Settings - Default`, and can also be found in the **Settings** section of this document.
         - Additional settings that are off by default can be activated, like auto-save.
     - The window will automatically scroll down once you reach the bottom.
-- Customize Fountainhead by picking a [color scheme](#color-schemes).
+- Customize Fountainhead by picking a color scheme (explained in **Features - Color Schemes**).
 
-
-##### [Back to Contents](#contents)
-
-<h2 id="symbol-dictionary">Symbol Dictionary</h2>
+## Symbol Dictionary
 
 Symbol | Key
 -------|----
@@ -107,9 +72,7 @@ Symbol | Key
 
 *Key bindings are displayed as: OSX / Windows/Linux*
 
-##### [Back to Contents](#contents)
-
-<h2 id="fountain-syntax">Fountain Syntax</h2>
+## Fountain Syntax
 
 Fountainhead offers complete support of the Fountain syntax. For a complete overview of the Fountain syntax, go to [http://fountain.io/syntax](http://fountain.io/syntax).
 
@@ -182,9 +145,7 @@ CUT TO:
 .Scene Heading
 ```
 
-##### [Back to Contents](#contents)
-
-<h2 id="features">Features</h2>
+## Features
 
 Fountainhead takes care of the formatting, so you just have to worry about the words.
 
@@ -194,9 +155,9 @@ Fountainhead commands can be found by selecting:
 or
 `Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead**
 
-*All settings can be deactivated and customized by the user, as described in the [Settings](#settings) section.*
+*All settings can be deactivated and customized by the user, as described in the **Settings** section.*
 
-<h3 id="auto-cap">Automatic Capitalization and Line Spacing</h3>
+Automatic Capitalization and Line Spacing
 
 Fountainhead believes in efficiency, and that means doing away with superfluous `Shift` and `Caps Lock` usage. It is smart enough to know which elements should be in all uppercase letters. Unless it's the beginning of an action or dialogue sentence, type everything in lowercase, and let Fountainhead handle the super-sizing.
 
@@ -228,9 +189,7 @@ Title Page | NO | SINGLE
 
 \*\*\* Dialogue lines that are not complete sentences have single line spacing. Dialogue line spacing can be changed in settings.
 
-##### [Back to Contents](#contents)
-
-<h3 id="manual-cap">Manual Capitalization</h3>
+### Manual Capitalization
 
 For those times that manual capitalization is needed (e.g., edits), the following commands are provided:
 
@@ -254,17 +213,13 @@ or
 `Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Convert to Uppercase**
 `Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Capitalize Current Line**
 
-##### [Back to Contents](#contents)
-
-<h3 id="auto-escape">Automatic Escaping of Parentheses, Boneyard, and Notes</h3>
+### Automatic Escaping of Parentheses, Boneyard, and Notes
 
 Pressing ⏎ when the cursor is directly to the left of the closing `)`,`*/`, `]]` will automatically escape the element and create a line break. 
 
 Pressing ⇧`Space` is the same as pressing → and will move your cursor to the right (useful for keyboards with Lilliputian arrow keys).
 
-##### [Back to Contents](#contents)
-
-<h3 id="color-schemes">Color Schemes</h3>
+### Color Schemes
 
 Fountainhead comes with a variety of custom color schemes, as well as support for all general Sublime Text color schemes.
 
@@ -274,13 +229,11 @@ By default, all custom color schemes are deactivated, allowing you to pick any o
 Fountainhead's custom color schemes can be chosen by selecting:
 `Sublime Text > Preferences > Color Scheme > Fountainhead > schemes`
 
-*Note: If you want a color scheme to only appear when working on a `.fountain` file, you can edit your [user settings](#settings), and uncomment the desired color scheme.*
+*Note: If you want a color scheme to only appear when working on a `.fountain` file, you can edit your user settings (explained in **Settings**), and uncomment the desired color scheme.*
 
 You may have to close (*save first!*) and re-open your screenplay if your color scheme changes are not seen.
 
-##### [Back to Contents](#contents)
-
-<h3 id="character-list">Character List</h3>
+### Character List
 
 Characters are remembered and can be autocompleted:
 
@@ -303,9 +256,7 @@ If the character list gets out of sync, you can recreate it by selecting:
 or
 `Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Update Character List**
 
-##### [Back to Contents](#contents)
-
-<h3 id="scene-list">Scene List</h3>
+### Scene List
 
 Scenes are remembered and can be autocompleted:
 
@@ -326,9 +277,7 @@ If the scene list gets out of sync, you can recreate it by selecting:
 or
 `Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Update Scene List**
 
-##### [Back to Contents](#contents)
-
-<h3 id="contd">(CONT'D)</h3>
+### (CONT'D)
 
 By default, `(CONT'D)`s are added to new characters. If you are loading a screenplay that doesn't have `(CONT'D)`s added, or have them added incorrectly, you can update your **entire** script by selecting:
 
@@ -344,23 +293,17 @@ or
 
 \* If the `"contd"` Fountainhead setting is not `false`, a `(CONT'D)` will be added to all newly typed characters.
 
-##### [Back to Contents](#contents)
+### Auto-Save
 
-<h3 id="auto-save">Auto-Save</h3>
-
-Fountainhead has the ability to automatically save your script after a defined number of keystrokes. By default this feature is turned off, but can be activated in [user settings](#settings).
+Fountainhead has the ability to automatically save your script after a defined number of keystrokes. By default this feature is turned off, but can be activated in user settings (explained in **Settings**).
 
 This feature pairs well with an app like [Marked 2](http://marked2app.com) that updates its preview every time you save.
 
-##### [Back to Contents](#contents)
-
-<h3 id="page-scroll">Automatic Page Scrolling</h3>
+### Automatic Page Scrolling
 
 Automatic page scrolling is built into Fountainhead, and activates when the cursor reaches the bottom of the screen. Once activated, the page scrolls down until the most recently edited action, character, or scene heading reaches the top of the screen.
 
-##### [Back to Contents](#contents)
-
-<h3 id="cursor-movement">Cursor Movement Shortcuts</h3>
+### Cursor Movement Shortcuts
 
 Shortcut | Equal to
 ---------|-----
@@ -370,15 +313,11 @@ Shortcut | Equal to
 
 \* ⌘`Return` / ⌃`Return` in the middle of a line of text will add a newline below, without breaking up the text on the previous line.
 
-##### [Back to Contents](#contents)
-
-<h3 id="goto-scene-section">Quick Navigation to Scenes and Sections</h3>
+### Quick Navigation to Scenes and Sections
 
 To navigate to a particular scene or section quickly, select: `Goto > Goto Symbol...` (⌘R / ⌃R). Type the desired scene/section or use ↑/↓, and press `Return` to select it. Pressing `Esc` will cancel out of the process.
 
-##### [Back to Contents](#contents)
-
-<h3 id="show-hide">Show/Hide Boneyard, Synopses, and Notes</h3>
+### Show/Hide Boneyard, Synopses, and Notes
 
 Boneyard, Synopses, and Notes can be quickly hidden or revealed by selecting:
 
@@ -394,17 +333,13 @@ or
 or
 `Tools > Command Palette` (⇧⌘P / ⇧⌃P) and entering **Fountainhead: Show/Hide Notes**
 
-Within [user settings](#settings), there is the ability to hide boneyard, synopses, and notes by default.
+Within user settings (explained in **Settings**), there is the ability to hide boneyard, synopses, and notes by default.
 
-##### [Back to Contents](#contents)
-
-<h3 id="text-emphasis">Text Emphasis</h3>
+### Text Emphasis
 
 Previously typed words can be highlighted and given the desired emphasis by typing the appropriate `*` and `_` characters. `*` and `_` will wrap automatically around the word(s).
 
-##### [Back to Contents](#contents)
-
-<h3 id="distraction-free-mode">Distraction Free Mode</h3>
+### Distraction Free Mode
 
 Sublime Text comes with a distraction free mode: `View > Enter Distraction Free Mode`(⇧⌃⌘F).
 
@@ -412,9 +347,7 @@ You can create separate settings by editing: `Sublime Text > Preferences > Setti
 
 \* These changes are reflected no matter the syntax. I have found that a `"wrap_width": 80` setting works well for distraction free coding as well as screenplay writing.
 
-##### [Back to Contents](#contents)
-
-<h2 id="settings">Settings</h2>
+## Settings
 
 A description of Fountainhead's settings are located in the Default Fountainhead Settings file:
 `Tools > Fountainhead > Preferences > Fountainhead Settings - Default`
@@ -425,14 +358,12 @@ If you want to change any of Fountainhead's settings, you must do so in your Fou
 2. Select all of the text: `Selection > Select All` (⌘A / ⌃A)
 3. Open `Tools > Fountainhead > Preferences > Fountain Settings - User`
 4. Paste the copied text: `Edit > Paste` (⌘V / ⌃V)
-5. Comment/Uncomment (`⌘/` / `⌃/` or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change\*
+5. Comment/Uncomment (`⌘/` / `⌃/` or by adding/deleting the `//` at the beginning of the line) or Edit the value of the setting you want to change (usually **true** or **false**)\*
 6. Save (⌘S / ⌃S)
 
 \* Each setting should only have one active value.
 
-##### [Back to Contents](#contents)
-
-<h3 id="installing-fonts">Installing Fonts</h3>
+### Installing Fonts
 
 The steps below will install fonts onto your system, allowing them to be used in all programs, including Sublime Text.
 
@@ -459,9 +390,7 @@ The steps below will install fonts onto your system, allowing them to be used in
 2. **Font Viewer** will launch and display the font
 3. Click `Install Font` in the lower right-hand corner of the preview window
 
-##### [Back to Contents](#contents)
-
-<h2 id="key-bindings">Key Bindings</h2>
+## Key Bindings
 
 You can customize Fountainhead's key bindings by copying the desired default key binding and editing it in your user key bindings. Due to how many key bindings Fountainhead uses, changes made to key bindings can have unexpected results.
 
@@ -470,9 +399,7 @@ Key Bindings can be accessed at:
 `Tools > Fountainhead > Preferences > Key Bindings - Default`
 `Tools > Fountainhead > Preferences > Key Bindings - User`
 
-##### [Back to Contents](#contents)
-
-<h2 id="faq">FAQ</h2>
+## FAQ
 
 - I have completed my Fountain masterpiece; now what?
     - A good place to look for ways to convert your screenplay to a PDF or a Final Draft document, is the official [Fountain Apps](http://fountain.io/apps) page.
@@ -480,25 +407,17 @@ Key Bindings can be accessed at:
 - Will Fountainhead ever have the ability to convert Fountain files to Final Draft or PDFs?
     - I hope to add these features in the future.
 - I want to use a character name that ends with a period (e.g., JR.).
-    - Start the character name with an "@".
+    - Start the character name with an `@`.
 
-##### [Back to Contents](#contents)
-
-<h2 id="contribute">Contribute</h2>
+## Contribute
 
 - Issue Tracker: [https://github.com/derickc/Fountainhead/issues](https://github.com/derickc/Fountainhead/issues)
 - Source Code: [https://github.com/derickc/Fountainhead](https://github.com/derickc/Fountainhead)
 
-##### [Back to Contents](#contents)
-
-<h2 id="support">Support</h2>
+## Support
 
 Feel free to contact me at: `derick` at `unterrible` dot `com`.
 
-##### [Back to Contents](#contents)
-
-<h2 id="license">License</h2>
+## License
 
 The project is licensed under the MIT license.
-
-##### [Back to Contents](#contents)

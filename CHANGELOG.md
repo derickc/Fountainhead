@@ -5,6 +5,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 Restart Sublime Text and re-open Fountain files for the updates to be properly applied.
 
 
+## [1.0.1] - 2015-02-18
+
+### Changed
+- Removed in-page links in README.md to improve support with https://packagecontrol.io.
+- Clean up help.fountain and install.txt.
+
+### Fixed
+- References in messages.json were not correct, so install and update messages were not appearing.
+
 ## [1.0.0] - 2015-02-17
 Happy to announce that version 1.0.0 has finally arrived for Fountainhead. This version is about creating a great writing and editing environment. Future versions will deal with previewing and converting screenplays.
 
@@ -46,13 +55,13 @@ Key Combination     | Performs the Following Action
 
 The above commands can also be selected through the use of menus:
 
-[[Tools > Fountainhead > Convert to Lowercase]]
-[[Tools > Fountainhead > Convert to Uppercase]]
-[[Tools > Fountainhead > Capitalize Current Line]]
+Tools > Fountainhead > Convert to Lowercase
+Tools > Fountainhead > Convert to Uppercase
+Tools > Fountainhead > Capitalize Current Line
 or
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Convert to Lowercase"
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Convert to Uppercase"
-[[Tools > Command Palette]] (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Capitalize Current Line"
+Tools > Command Palette (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Convert to Lowercase"
+Tools > Command Palette (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Convert to Uppercase"
+Tools > Command Palette (⇧⌘P / ⇧⌃P) and entering "Fountainhead: Capitalize Current Line"
 
 
 ## [0.7.0] - 2015-01-28
