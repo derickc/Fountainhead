@@ -18,7 +18,7 @@
                 <string>#1a1a1a</string>
                 <key>caret</key>
                 <string>#34c4e0</string>
-                <!-- Action, Centered Text, Title Page -->
+                <!-- Action, Centered Text -->
                 <key>foreground</key>
                 <string>#939293</string>
                 <key>invisibles</key>
@@ -97,9 +97,9 @@
         </dict>
         <dict>
             <key>name</key>
-            <string>Dialogue and Lyrics</string>
+            <string>Dialogue</string>
             <key>scope</key>
-            <string>string</string>
+            <string>dialogue</string>
             <key>settings</key>
                 <dict>
                     <key>foreground</key>
@@ -108,9 +108,22 @@
         </dict>
         <dict>
             <key>name</key>
+            <string>Lyrics</string>
+            <key>scope</key>
+            <string>lyrics</string>
+            <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#939293</string>
+                    <key>fontStyle</key>
+                    <string>italic</string>
+                </dict>
+        </dict>
+        <dict>
+            <key>name</key>
             <string>Character</string>
             <key>scope</key>
-            <string>entity.name.class</string>
+            <string>string</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
