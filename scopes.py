@@ -1,0 +1,16 @@
+fountain_scope = 'text.fountain '
+action_scope = 'foreground '
+boneyard_scope = 'comment '
+dialogue_scope = 'dialogue '  # string
+lyrics_scope = 'lyrics '
+character_scope = 'string '  # entity.name.class
+parenthetical_scope = 'entity.other.inherited-class '
+note_scope = 'variable.parameter '
+scene_scope = 'entity.name.function '
+character_list_scope = 'suport.constant '
+section_scope = 'entity.name.filename '
+synopses_scope = 'meta.diff '
+pagebreak_scope = 'support.function '
+title_page_scope = 'constant.numeric '
+center_scope = 'foreground '
+transition_scope = 'entity.name.tag '

@@ -1,4 +1,0 @@
-Fountainhead 0.3.5 Changelog:
-
-Fixed
- - Fountain syntax found using comparison to path name for ST2 support.

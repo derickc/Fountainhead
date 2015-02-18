@@ -210,7 +210,8 @@ Scene Headings | YES | DOUBLE
 Action | NO | DOUBLE
 Characters\* | YES | SINGLE
 `@` Characters\*\* | NO | SINGLE
-Dialogue | NO | DOUBLE
+Dialogue | NO | SINGLE
+Lyrics | NO | SINGLE
 Parenthetical | NO | SINGLE
 Transitions | YES | DOUBLE
 Notes | NO | SINGLE
@@ -476,6 +477,8 @@ Key Bindings can be accessed at:
     - An online solution that appears to convert Fountain files to PDFs well is [Writer Duet](https://writerduet.com/convert). You can also convert Fountain to Final Draft and Celtx.
 - Will Fountainhead ever have the ability to convert Fountain files to Final Draft or PDFs?
     - I hope to add these features in the future.
+- I want to use a character name that ends with a period (e.g., JR.).
+    - Start the character name with an "@".
 
 ##### [Back to Contents](#contents)
 

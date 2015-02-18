@@ -99,6 +99,9 @@
     // Automatically add (CONT'D) to character names
     "contd": true,
 
+    // Add a blank line (double line space) after dialogue (lyrics have single line spaces)
+    "dialogue_double_line_space": true,
+
     // Toggle key binding commands
     // Move cursor forward using shift + space
     "forward_cursor": true,
@@ -108,7 +111,7 @@
     "cap_current_line": true,
     // Automatically capitalize scene headings, transitions, and character names when pressing Return
     "line_cap": true,
-    // Automatically places a blank line after scene headings, action, transitions, and dialogue
+    // Automatically places a blank line after scene headings, action, and transitions
     "auto_line": true,
     // Automatically wrap/unwrap text when using markdown text emphasis
     "text_emphasis": true

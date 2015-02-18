@@ -1,4 +1,0 @@
-Fountainhead 0.3.2 Changelog:
-
-Fixed
- - Move SublimeHelper into sublime_helper/__init__.py
