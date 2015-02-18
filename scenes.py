@@ -7,13 +7,34 @@ import codecs
 # import platform
 # from .sublime_helper import *
 try:
-    from .sublime_helper import SublimeHelper
+    from . import scopes
 except (ImportError, ValueError):
-    from sublime_helper import SublimeHelper
+    import scopes
+# try:
+#     from .sublime_helper import SublimeHelper
+# except (ImportError, ValueError):
+#     from sublime_helper import SublimeHelper
 
-cursor_scope = SublimeHelper.cursor_scope
-line_scope = SublimeHelper.line_scope
-line_string = SublimeHelper.line_string
+# cursor_scope = SublimeHelper.cursor_scope
+# line_scope = SublimeHelper.line_scope
+# line_string = SublimeHelper.line_string
+
+fountain_scope = scopes.fountain_scope
+action_scope = scopes.action_scope
+boneyard_scope = scopes.boneyard_scope
+dialogue_scope = scopes.dialogue_scope
+lyrics_scope = scopes.lyrics_scope
+character_scope = scopes.character_scope
+parenthetical_scope = scopes.parenthetical_scope
+note_scope = scopes.note_scope
+scene_scope = scopes.scene_scope
+character_list_scope = scopes.character_list_scope
+section_scope = scopes.section_scope
+synopses_scope = scopes.synopses_scope
+pagebreak_scope = scopes.pagebreak_scope
+title_page_scope = scopes.title_page_scope
+center_scope = scopes.center_scope
+transition_scope = scopes.transition_scope
 
 user = ''
 # user_os = platform.system()
@@ -29,6 +50,8 @@ class Scenes(sublime_plugin.EventListener):
     current_line = 0
     filename = ''
 
+    # transition_scope = scopes.transition_scope
+
     def modified_scene(self, view):
         if view.settings().get('syntax') == 'Packages/Fountainhead/Fountainhead.tmLanguage':
         # if 'Fountainhead.tmLanguage' in view.settings().get('syntax'):
@@ -41,12 +64,13 @@ class Scenes(sublime_plugin.EventListener):
                 if view.rowcol(view.sel()[0].end())[0] != self.current_line:
                     self.previous_line = self.current_line
                     self.current_line = view.rowcol(view.sel()[0].end())[0]
-                    if view.scope_name(view.text_point(self.previous_line + 1, 0) - 2) == 'text.fountain entity.name.function ':
+                    # if view.scope_name(view.text_point(self.previous_line + 1, 0) - 2) == fountain_scope+scene_scope'text.fountain entity.name.function ':
+                    if view.scope_name(view.text_point(self.previous_line + 1, 0) - 2) == fountain_scope+scene_scope:
                         self.current_scene = view.substr(view.line(view.text_point(self.previous_line, 0)))
                         scene = self.current_scene
                         if scene[0] == ' ' or scene[0] == '\t':
                             scene = re.split(r'^\s*', scene)[1]
-                        if scene not in self.scene_headings:
+                        if scene not in self.scene_headings and scene != '' and scene is not None:
                             self.scene_headings.append(scene)
                             self.scene_headings = sorted(self.scene_headings)
                             ShowScenesCommand.scenes = self.scene_headings
@@ -56,7 +80,8 @@ class Scenes(sublime_plugin.EventListener):
                                 os.mkdir(packages_directory)
                             completions_file = packages_directory + 'Scenes.sublime-completions'
                             completions = codecs.open(completions_file, 'w', 'utf8')
-                            completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                            # completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                            completions.write('{\n\t\t"scope": ' + '"' + fountain_scope + '- ' + boneyard_scope + '- ' + action_scope + '- ' + dialogue_scope + '- ' + lyrics_scope + '- ' + character_scope + '- ' + parenthetical_scope + '- ' + note_scope + '- ' + scene_scope + '- ' + section_scope + '- ' + synopses_scope + '- ' + pagebreak_scope + '- ' + title_page_scope + '- ' + center_scope + '- ' + transition_scope[0:-1] + '",\n\n\t\t"completions":\n\t\t[')
                             length = len(self.scene_headings)
                             scene_counter = 0
                             for scene in self.scene_headings:
@@ -118,13 +143,14 @@ class Scenes(sublime_plugin.EventListener):
                     self.filename = view.file_name()
                     try:
                         while counter >= 0:
-                            scene = view.substr(view.find_by_selector('text.fountain entity.name.function ')[counter])
-                            heading = scene
-                            if heading[0] == ' ' or heading[0] == '\t':
-                                heading = (re.split(r'^\s*', heading))[1]
-                            if heading not in self.scene_headings:
-                                if heading[0] != '#':
-                                    self.scene_headings.append(heading)
+                            # scene = view.substr(view.find_by_selector('text.fountain entity.name.function ')[counter])
+                            scene = view.substr(view.find_by_selector(fountain_scope+scene_scope)[counter])
+                            # heading = scene
+                            if scene[0] == ' ' or scene[0] == '\t':
+                                scene = (re.split(r'^\s*', scene))[1]
+                            if scene not in self.scene_headings and scene != '' and scene is not None:
+                                if scene[0] != '#':
+                                    self.scene_headings.append(scene)
                             counter += 1
                     except IndexError:
                         pass
@@ -150,7 +176,8 @@ class Scenes(sublime_plugin.EventListener):
                         os.mkdir(packages_directory)
                     completions_file = packages_directory + 'Scenes.sublime-completions'
                     completions = codecs.open(completions_file, 'w', 'utf8')
-                    completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                    # completions.write('{\n\t\t"scope": "text.fountain - comment - string - entity.other.attribute-name - entity.other.inherited-class - foreground - meta.diff - entity.name.tag - entity.name.class - variable.parameter",\n\n\t\t"completions":\n\t\t[')
+                    completions.write('{\n\t\t"scope": ' + '"' + fountain_scope + '- ' + boneyard_scope + '- ' + action_scope + '- ' + dialogue_scope + '- ' + lyrics_scope + '- ' + character_scope + '- ' + parenthetical_scope + '- ' + note_scope + '- ' + scene_scope + '- ' + section_scope + '- ' + synopses_scope + '- ' + pagebreak_scope + '- ' + title_page_scope + '- ' + center_scope + '- ' + transition_scope[0:-1] + '",\n\n\t\t"completions":\n\t\t[')
 
                     # length = len(self.major_scenes)
                     length = len(self.scene_headings)

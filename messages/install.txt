@@ -74,7 +74,8 @@ Scene Headings   | YES       | DOUBLE
 Action           | NO        | DOUBLE
 Characters (1)   | YES       | SINGLE
 @ Characters (2) | NO        | SINGLE
-Dialogue         | NO        | DOUBLE
+Dialogue         | NO        | SINGLE
+Lyrics           | NO        | SINGLE
 Parenthetical    | NO        | SINGLE
 Transitions      | YES       | DOUBLE
 Notes            | NO        | SINGLE

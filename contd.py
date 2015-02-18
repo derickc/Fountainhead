@@ -4,6 +4,10 @@ import re
 # import threading
 # import sys
 try:
+    from . import scopes
+except (ImportError, ValueError):
+    import scopes
+try:
     from .sublime_helper import SublimeHelper
 except (ImportError, ValueError):
     from sublime_helper import SublimeHelper
@@ -12,6 +16,23 @@ except (ImportError, ValueError):
 
 # if int(sublime.version()) < 3000:
 #     on_modified_async = sublime.on_modified
+
+fountain_scope = scopes.fountain_scope
+action_scope = scopes.action_scope
+boneyard_scope = scopes.boneyard_scope
+dialogue_scope = scopes.dialogue_scope
+lyrics_scope = scopes.lyrics_scope
+character_scope = scopes.character_scope
+parenthetical_scope = scopes.parenthetical_scope
+note_scope = scopes.note_scope
+scene_scope = scopes.scene_scope
+character_list_scope = scopes.character_list_scope
+section_scope = scopes.section_scope
+synopses_scope = scopes.synopses_scope
+pagebreak_scope = scopes.pagebreak_scope
+title_page_scope = scopes.title_page_scope
+center_scope = scopes.center_scope
+transition_scope = scopes.transition_scope
 
 character1 = ''
 character2 = ''
@@ -39,36 +60,40 @@ class Contd(sublime_plugin.EventListener):
             # if sublime.load_settings('Fountainhead.sublime-settings').get('contd', False) and (self.cursor_position1 != self.cursor_position2):
             if view.settings().get('contd', False) and (self.cursor_position1 != self.cursor_position2):
                 s = SublimeHelper()
-                if s.cursor_scope(view) == 'text.fountain string entity.name.class ':
+                # if s.cursor_scope(view) == 'text.fountain string entity.name.class ':
+                if s.cursor_scope(view) == fountain_scope + dialogue_scope + character_scope:
                     self.cursor_row = view.rowcol(view.sel()[0].end())[0] - 1
                     self.cursor_position1 = self.cursor_position2
-                elif s.cursor_scope(view) == 'text.fountain entity.name.function ':
+                # elif s.cursor_scope(view) == 'text.fountain entity.name.function ':
+                elif s.cursor_scope(view) == fountain_scope + scene_scope:
                     self.cursor_row = view.rowcol(view.sel()[0].end())[0]
                     self.cursor_position1 = self.cursor_position2
-                elif s.cursor_scope(view) != 'text.fountain string entity.name.class ':
+                # elif s.cursor_scope(view) != 'text.fountain string entity.name.class ':
+                elif s.cursor_scope(view) != fountain_scope + dialogue_scope + character_scope:
                             # print('cursor row ' + str(self.cursor_row))
-                            scope_array = view.find_by_selector('text.fountain entity.name.function ')
-                            row_array = []
-                            for position in scope_array:
-                                row_array.append(view.rowcol(sublime.Region.end(position))[0])
-                            row_begin = 0
-                            row_end = 0
-                            for row in row_array:
-                                if row <= self.cursor_row:
-                                    row_begin = row
-                                if row >= self.cursor_row and row_end == 0:
-                                    row_end = row
-                            if row_end == 0 or row_end <= self.cursor_row:
-                                row = 0
-                                text_point1 = 0
-                                text_point2 = 1
-                                while text_point1 != text_point2:
-                                    text_point1 = view.text_point(row, 0)
-                                    row += 1
-                                    text_point2 = view.text_point(row, 0)
+                            # scope_array = view.find_by_selector('text.fountain entity.name.function ')
+                        scope_array = view.find_by_selector(fountain_scope + scene_scope)
+                        row_array = []
+                        for position in scope_array:
+                            row_array.append(view.rowcol(sublime.Region.end(position))[0])
+                        row_begin = 0
+                        row_end = 0
+                        for row in row_array:
+                            if row <= self.cursor_row:
+                                row_begin = row
+                            if row >= self.cursor_row and row_end == 0:
                                 row_end = row
-                            self.update_contd(view, row_begin, row_end)
-                            self.cursor_position1 = self.cursor_position2
+                        if row_end == 0 or row_end <= self.cursor_row:
+                            row = 0
+                            text_point1 = 0
+                            text_point2 = 1
+                            while text_point1 != text_point2:
+                                text_point1 = view.text_point(row, 0)
+                                row += 1
+                                text_point2 = view.text_point(row, 0)
+                            row_end = row
+                        self.update_contd(view, row_begin, row_end)
+                        self.cursor_position1 = self.cursor_position2
 
     def on_modified_async(self, view):
         if int(sublime.version()) >= 3000:
@@ -95,7 +120,8 @@ class Contd(sublime_plugin.EventListener):
                     line_end = line_beginning + len(view.substr(view.line(text_point1)))
                     RemovecontdCommand.region = sublime.Region(line_end - len("(CONT'D)") - 1, line_end)
                     scope = view.scope_name(line_end - 1)
-                    if scope == 'text.fountain string entity.name.class ':
+                    # if scope == 'text.fountain string entity.name.class ':
+                    if scope == fountain_scope + character_scope:
                         character = view.substr(view.line(text_point1))
                         if re.search(r"\s+\([cC][oO][nN][tT]\'[dD]\)", character) is not None:
                                 view.run_command('removecontd')
@@ -129,7 +155,8 @@ class Contd(sublime_plugin.EventListener):
                             row_begin += 1
                         else:
                             scope = view.scope_name(line_end - 1)
-                            if scope == 'text.fountain string entity.name.class ':
+                            # if scope == 'text.fountain string entity.name.class ':
+                            if scope == fountain_scope + dialogue_scope + character_scope:
                                 # get the entire line string
                                 character2 = view.substr(view.line(text_point1))
                                 # try to remove leading spaces
@@ -146,7 +173,8 @@ class Contd(sublime_plugin.EventListener):
                                 elif character2 == character1:
                                     view.run_command('insertcontd')
                             character1 = character2
-                            if scope == 'text.fountain entity.name.function ':
+                            # if scope == 'text.fountain entity.name.function ':
+                            if scope == fountain_scope + scene_scope:
                                 character1 = ''
                             row_begin += 1
                         text_point2 = view.text_point(row_begin, 0)
@@ -161,7 +189,8 @@ class Contd(sublime_plugin.EventListener):
                             row_begin += 1
                         else:
                             scope = view.scope_name(line_end - 1)
-                            if scope == 'text.fountain string entity.name.class ':
+                            # if scope == 'text.fountain string entity.name.class ':
+                            if scope == fountain_scope + dialogue_scope + character_scope:
                                 character2 = view.substr(view.line(text_point1))
                                 # try to remove leading spaces
                                 if character2[0] == ' ' or character2[0] == '\t':
@@ -177,7 +206,8 @@ class Contd(sublime_plugin.EventListener):
                                 elif character2 == character1:
                                     view.run_command('insertcontd')
                             character1 = character2
-                            if scope == 'text.fountain entity.name.function ':
+                            # if scope == 'text.fountain entity.name.function ':
+                            if scope == fountain_scope + scene_scope:
                                 character1 = ''
                             row_begin += 1
                         text_point2 = view.text_point(row_begin, 0)
