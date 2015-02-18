@@ -74,7 +74,7 @@ Scene Headings   | YES       | DOUBLE
 Action           | NO        | DOUBLE
 Characters (1)   | YES       | SINGLE
 @ Characters (2) | NO        | SINGLE
-Dialogue         | NO        | SINGLE
+Dialogue (3)     | NO        | DOUBLE
 Lyrics           | NO        | SINGLE
 Parenthetical    | NO        | SINGLE
 Transitions      | YES       | DOUBLE
@@ -88,6 +88,7 @@ Title Page       | NO        | SINGLE
 
 (1) Supports {V.O.} and {O.S.} character elements, which are automatically capitalized.
 (2) Character names that begin with @ will remain as written, but {V.O.} and {O.S.} will be capitalized. (e.g., @McDOWELL (v.o.) > @McDOWELL (V.O.))
+(3) Dialogue lines that are not complete sentences have single line spacing. Dialogue line spacing can be changed in settings.
 
 ## Manual Capitalization
 
