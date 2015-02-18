@@ -13,12 +13,14 @@ Happy to announce that version 1.0.0 has finally arrived for Fountainhead. This 
 - Manual Capitalization section in the help documentation.
 - Reference and link to the Input font for coding, by Font Bureau. Read more about it here: http://input.fontbureau.com
 - Dialogue and Lyric syntax scopes. Lyrics are character dialogue that begin with ~.
+- Ability to change between single or double line spacing after Dialogue, using the dialogue_double_line_space setting.
+- README.md FAQ entry on beginning characters that end in a period (e.g., JR.) with an "@".
 
 ### Changed
 - Scene and Character lists retain their capitalization as entered, which means they will most likely be in all uppercase letters (except @ characters). Great when editing!
 - Improved support for default Sublime Text Color Schemes. Dialogue and Lyrics default to foreground (Action) colors, and Characters default to string scopes.
 - All version updates combined into a single change log (CHANGELOG.md).
-- Single line space inserted after Dialogue, instead of a double line space.
+- All color schemes to use the new Dialog, Lyrics, and Character scopes.
 
 ### Fixed
 - Removed Default.sublime-keymap, which was causing conflicts with the Default (OSX).sublime-keymap file, and is redundant with the Linux and Windows keymap files.
@@ -130,7 +132,7 @@ Taken from http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall
 - Help documentation now located in Tools > Fountainhead > Help
 
 ### Changed
-- Updated README to include the new documentation.
+- README.md to include the new documentation.
 - By default, no Fountainhead color schemes are selected in settings, allowing the user to select Sublime Text's general color schemes. Fountain-only color schemes can be selected in Fountainhead's user settings.
 
 ### Fixed
@@ -171,7 +173,7 @@ Taken from http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall
 ## [0.3.0] - 2014-11-30
 
 ### Added
-- Supports Sublime Text 2.
+- Sublime Text 2 support.
 
 
 ## [0.2.0] - 2014-11-29
