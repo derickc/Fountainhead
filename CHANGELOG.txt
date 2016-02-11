@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 Restart Sublime Text and re-open Fountain files for the updates to be properly applied.
 
+## [1.0.3] - 2016-02-10
+
+### Changed
+- Updated Fountainhead.tmLanguage file to escape parenthese to fix Regex errors. Thanks Manuel!
 
 ## [1.0.2] - 2015-02-18
 
