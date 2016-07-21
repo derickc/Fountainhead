@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 Restart Sublime Text and re-open Fountain files for the updates to be properly applied.
 
+## [1.0.4] - 2016-07-21
+
+### Changed
+- Updated to support Cyrillic character names.
+
 ## [1.0.3] - 2016-02-10
 
 ### Changed
