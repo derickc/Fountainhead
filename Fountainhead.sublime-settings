@@ -102,6 +102,9 @@
     // Add a blank line (double line space) after dialogue (lyrics have single line spaces)
     "dialogue_double_line_space": true,
 
+    // Add a blank line (double line space) after notes
+    "note_double_line_space": true,
+
     // Toggle key binding commands
     // Move cursor forward using shift + space
     "forward_cursor": true,

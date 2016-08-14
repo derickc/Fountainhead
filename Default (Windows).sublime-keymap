@@ -326,7 +326,7 @@
 
     // Don't capitalize line if cursor is inside or outside of parentheticals.
     { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/Add Line.sublime-macro"},
+    "file": "Packages/Fountainhead/macros/AddLine.sublime-macro"},
     "context": 
     [
         { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": "^[)]$", "match_all": true },
@@ -337,7 +337,7 @@
     ]},
 
     { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/Add Line.sublime-macro"},
+    "file": "Packages/Fountainhead/macros/AddLine.sublime-macro"},
     "context": 
     [
         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[)]$", "match_all": true },
@@ -349,7 +349,7 @@
 
     // Don't capitalize line and add single return if cursor is inside or outside notes.
     { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/Add Line.sublime-macro"},
+    "file": "Packages/Fountainhead/macros/AddLine.sublime-macro"},
     "context": 
     [
         { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": "^[]][]]$", "match_all": true },
@@ -359,7 +359,7 @@
     ]},
 
     { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/Add Line.sublime-macro"},
+    "file": "Packages/Fountainhead/macros/AddLine.sublime-macro"},
     "context": 
     [
         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]][]]$", "match_all": true },
@@ -368,9 +368,32 @@
         { "key": "setting.line_cap", "operator": "equal", "operand": true}
     ]},
 
+    // Don't capitalize line and add double return if cursor is inside or outside notes.
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/AddDoubleLine.sublime-macro"},
+    "context": 
+    [
+        { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": "^[]][]]$", "match_all": true },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+        { "key": "setting.line_cap", "operator": "equal", "operand": true},
+        { "key": "setting.note_double_line_space", "operator": "equal", "operand": true}
+    ]},
+
+    { "keys": ["enter"], "command": "run_macro_file", "args": {
+    "file": "Packages/Fountainhead/macros/AddDoubleLine.sublime-macro"},
+    "context": 
+    [
+        { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[]][]]$", "match_all": true },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "selector", "operator": "equal", "operand": "text.fountain", "match_all": true },
+        { "key": "setting.line_cap", "operator": "equal", "operand": true},
+        { "key": "setting.note_double_line_space", "operator": "equal", "operand": true}
+    ]},
+
     // Don't capitalize line and add single return if cursor is inside or outside comments.
     { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/Add Line.sublime-macro"},
+    "file": "Packages/Fountainhead/macros/AddLine.sublime-macro"},
     "context": 
     [
         { "key": "following_text", "operator": "text", "operator": "regex_contains", "operand": "[*][\/]$", "match_all": true },
@@ -380,7 +403,7 @@
     ]},
 
     { "keys": ["enter"], "command": "run_macro_file", "args": {
-    "file": "Packages/Fountainhead/macros/Add Line.sublime-macro"},
+    "file": "Packages/Fountainhead/macros/AddLine.sublime-macro"},
     "context": 
     [
         { "key": "preceding_text", "operator": "text", "operator": "regex_contains", "operand": "[*][\/]$", "match_all": true },

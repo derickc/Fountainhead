@@ -14,7 +14,7 @@
 	{
 		"args":
 		{
-			"file": "res://Packages/Default/Add Line.sublime-macro"
+			"file": "res://Packages/Default/AddLine.sublime-macro"
 		},
 		"command": "run_macro_file"
 	},

@@ -175,7 +175,7 @@ Dialogue\*\*\* | NO | DOUBLE
 Lyrics | NO | SINGLE
 Parenthetical | NO | SINGLE
 Transitions | YES | DOUBLE
-Notes | NO | SINGLE
+Notes | NO | DOUBLE
 Boneyard | NO | SINGLE
 Sections | NO | DOUBLE
 Synopses | NO | DOUBLE

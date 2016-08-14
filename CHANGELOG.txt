@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 Restart Sublime Text and re-open Fountain files for the updates to be properly applied.
 
+## [1.0.5] - 2016-08-13
+
+### Changed
+- Updated Notes: Double line spaces are inserted when pressing Return by default.
+  - Notes can be changed to single line spaces by adding "note_double_line_space": false," to the user's Fountainhead settings file.
+
 ## [1.0.4] - 2016-07-21
 
 ### Changed
